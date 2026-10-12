@@ -239,10 +239,10 @@ footer a{color:var(--mute);margin:0 8px;text-decoration:underline;text-underline
 <h3>8. Retention and your rights</h3><p>We keep data while the competition and its payments, results and disputes are active, and for a reasonable period after. You can ask to correct or delete your data by contacting <a href="https://www.instagram.com/rabha_automation" target="_blank" rel="noopener">@rabha_automation</a> on Instagram; some payment records may need to be kept.</p>
 <h3>9. Changes</h3><p>We may update this policy and will post the new version here.</p>
 </section><main id="app"><div class="authwrap"><div class="glass" style="text-align:center"><p><b>Loading RABHA…</b></p><noscript><p class="m">JavaScript is needed to see ideas and log in. You can still read the <a href="#/terms">Terms</a> and the <a href="#/privacy">Privacy Policy</a>.</p></noscript></div></div></main><footer><nav aria-label="Footer"><a href="#/terms">Terms &amp; Conditions</a><a href="#/privacy">Privacy Policy</a><a href="https://www.instagram.com/rabha_automation" target="_blank" rel="noopener">@rabha_automation</a></nav><div>© RABHA</div></footer>
-<script>setTimeout(function(){if(!window.__ready){var a=document.getElementById("app");if(a)a.innerHTML='<div class="authwrap"><div class="glass"><b>The app could not start.</b><p class="m">This usually happens in a preview or HTML viewer that blocks JavaScript or web storage. Open the website in Chrome or Safari. The Terms and Privacy Policy still work: <a href="#/terms">Terms</a> · <a href="#/privacy">Privacy</a>.</p></div></div>'}},4000)</script>
+<script>setTimeout(function(){if(!window.__ready){var a=document.getElementById("app");if(a)a.innerHTML='<div class="authwrap"><div class="glass"><b>The app could not start.</b><p class="m">This usually happens in a preview or HTML viewer that blocks JavaScript or web storage. Open the website in Chrome or Safari. The Terms and Privacy Policy still work: <a href="#/terms">Terms</a> · <a href="#/privacy">Privacy</a>.</p></div></div>'}},5000)</script>
 <script>(function(){"use strict";
 /* ===== SETTINGS ===== */
-const CFG={apiKey:"AIzaSyAm93KUQBkZ42Fe5w6fDIOh93APfLwQfXQ",authDomain:"rabha-245a6.firebaseapp.com",projectId:"rabha-245a6",appId:"1:842930028121:web:e686b787f05a8c2741bb48"};
+const CFG={apiKey:"AIzaSyAm93KUQBkZ42Fe5w6fDIOh93APfLwQfXQ",authDomain:"rabha-245a6.firebaseapp.com",projectId:"rabha-245a6",storageBucket:"rabha-245a6.firebasestorage.app",messagingSenderId:"842930028121",appId:"1:842930028121:web:e686b787f05a8c2741bb48"};
 const ADMIN="jxXs8e5Q8wQeUBFrTD7TXscf62u2",RESULTS_OUT=false;
 const GA_ID="";
 const FEES={1:149,2:249,3:349,4:399,5:499};
@@ -259,7 +259,7 @@ try{const r=new URLSearchParams(location.search).get("ref");if(r)ls.set("ref",r.
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>Array.from(r.querySelectorAll(s));
 const V=id=>((($("#"+id)||{}).value)||"").trim();
 const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const withTO=(p,ms)=>Promise.race([p,new Promise((_,rej)=>setTimeout(()=>rej(new Error("timeout")),ms||10000))]);
+const withTO=(p,ms)=>Promise.race([p,new Promise((_,rej)=>setTimeout(()=>rej(new Error("timeout")),ms||15000))]);
 
 const S=(b,x)=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"${x||""}>${b}</svg>`;
 const ICON={
@@ -287,11 +287,26 @@ let errShown=false;function reportError(e){try{console.error(e)}catch(x){}if(!er
 window.addEventListener("error",e=>reportError(e.error||e.message));
 window.addEventListener("unhandledrejection",e=>reportError(e.reason));
 
+/* ===== FAST Firebase init (mobile-friendly) ===== */
 async function initFB(){
   const m=await Promise.all([import(FBV+"firebase-app.js"),import(FBV+"firebase-auth.js"),import(FBV+"firebase-firestore.js")]);
   const app=m[0].initializeApp(CFG);AU=m[1];FS=m[2];auth=AU.getAuth(app);
-  try{db=FS.initializeFirestore(app,{experimentalAutoDetectLongPolling:true})}catch(e){db=FS.getFirestore(app)}
+
+  // Mobile detect - mobile/matame network par long-polling force
+  const isMobile=/Android|iPhone|iPad|iPod|Mobile|Opera Mini/i.test(navigator.userAgent)||window.innerWidth<768;
+
+  try{
+    db=FS.initializeFirestore(app,{
+      experimentalAutoDetectLongPolling:false,
+      experimentalForceLongPolling:isMobile,
+      useFetchStreams:false
+    });
+  }catch(e){db=FS.getFirestore(app)}
+
+  // Login remember (page refresh par login jado nahi rahe)
+  try{await AU.setPersistence(auth,AU.browserLocalPersistence)}catch(e){}
 }
+
 function watchAuth(){
   if(watching||!AU)return;watching=true;
   AU.onAuthStateChanged(auth,u=>{
@@ -302,15 +317,15 @@ function watchAuth(){
     if(dataState==="error"){dataPromise=loadData().catch(()=>{dataState="error"}).then(()=>{nav();if(["","idea"].includes(route()[0]))render(false)})}
   });
 }
-async function diagFS(){try{const c=new AbortController(),tm=setTimeout(()=>c.abort(),7000);const r=await fetch("https://firestore.googleapis.com/v1/projects/"+CFG.projectId+"/databases/(default)/documents/ideas?pageSize=1&key="+CFG.apiKey,{signal:c.signal});clearTimeout(tm);let j={};try{j=await r.json()}catch(e){}return "TEST "+r.status+" "+((j.error&&(j.error.status+": "+j.error.message))||"OK")}catch(e){return "TEST blocked: "+(e.name||e.message)}}
+async function diagFS(){try{const c=new AbortController(),tm=setTimeout(()=>c.abort(),10000);const r=await fetch("https://firestore.googleapis.com/v1/projects/"+CFG.projectId+"/databases/(default)/documents/ideas?pageSize=1&key="+CFG.apiKey,{signal:c.signal});clearTimeout(tm);let j={};try{j=await r.json()}catch(e){}return "TEST "+r.status+" "+((j.error&&(j.error.status+": "+j.error.message))||"OK")}catch(e){return "TEST blocked: "+(e.name||e.message)}}
 const fv=v=>{if(v==null)return null;if("stringValue" in v)return v.stringValue;if("integerValue" in v)return +v.integerValue;if("doubleValue" in v)return v.doubleValue;if("booleanValue" in v)return v.booleanValue;if("timestampValue" in v){const ms=Date.parse(v.timestampValue);return{seconds:Math.floor(ms/1000),toMillis:()=>ms}}if("mapValue" in v){const o={};Object.keys(v.mapValue.fields||{}).forEach(k=>o[k]=fv(v.mapValue.fields[k]));return o}if("arrayValue" in v)return(v.arrayValue.values||[]).map(fv);return null};
 
-/* ===== REST fallback (works even if SDK fails) ===== */
+/* ===== REST fallback ===== */
 async function restList(n){
   const out=[];let pt="";
   for(let k=0;k<30;k++){
     const u="https://firestore.googleapis.com/v1/projects/"+CFG.projectId+"/databases/(default)/documents/"+n+"?pageSize=300&key="+CFG.apiKey+(pt?"&pageToken="+encodeURIComponent(pt):"");
-    const c=new AbortController(),tm=setTimeout(()=>c.abort(),8000);let r;
+    const c=new AbortController(),tm=setTimeout(()=>c.abort(),15000);let r;
     try{r=await fetch(u,{signal:c.signal})}finally{clearTimeout(tm)}
     if(!r.ok){const e=new Error("REST "+r.status);e.code=r.status===403?"permission-denied":"http-"+r.status;throw e}
     const j=await r.json();
@@ -326,7 +341,7 @@ async function loadData(){
   const g=async n=>{
     try{return await restList(n)}
     catch(e1){
-      try{await initP;if(!FS)throw e1;return(await withTO(FS.getDocs(FS.collection(db,n)),8000)).docs}
+      try{await initP;if(!FS)throw e1;return(await withTO(FS.getDocs(FS.collection(db,n)),15000)).docs}
       catch(e){errs.push(n+" ("+(e.code||e.message)+")");if(n==="ideas")ideasFailed=true;return[]}
     }
   };
@@ -337,10 +352,27 @@ async function loadData(){
   byIdea={};r[2].forEach(d=>{const x=d.data();if(!byIdea[x.idea])byIdea[x.idea]={};byIdea[x.idea][x.uid]=x.v});
   dataState=ideasFailed?"error":"ready";
 }
+
+/* ===== BOOT with cache (fast repeat visits) ===== */
 function boot(){
-  initP=(FS?Promise.resolve():withTO(initFB(),15000)).then(()=>{watchAuth()}).catch(e=>{errs.push("init ("+(e.message||e)+")");authReady=true;render(false)});
-  setTimeout(()=>{if(!authReady){authReady=true;render(false)}},10000);
-  const p=loadData().catch(e=>{dataState="error";errs.push(e.message||String(e))}).then(()=>{nav()});
+  // Cached data check (5 min) - dubara fast load
+  try{
+    const cached=ls.get("rb_cache_v2");
+    if(cached){
+      const c=JSON.parse(cached);
+      if(Date.now()-c.t<5*60*1000&&c.ideas&&c.ideas.length){
+        ideas=c.ideas;byIdea=c.byIdea||{};cfg=c.cfg||{};dataState="ready";
+      }
+    }
+  }catch(e){}
+
+  initP=(FS?Promise.resolve():withTO(initFB(),20000)).then(()=>{watchAuth()}).catch(e=>{errs.push("init ("+(e.message||e)+")");authReady=true;render(false)});
+  setTimeout(()=>{if(!authReady){authReady=true;render(false)}},15000);
+
+  const p=loadData().then(()=>{
+    // Cache save
+    try{ls.set("rb_cache_v2",JSON.stringify({ideas,byIdea,cfg,t:Date.now()}))}catch(e){}
+  }).catch(e=>{dataState="error";errs.push(e.message||String(e))}).then(()=>{nav()});
   dataPromise=p;return p;
 }
 
@@ -498,10 +530,10 @@ async function enter(t){
   if(!authReady)return void main(`<div style="padding-top:30px"><div class="sk"></div></div>`,t);
   if(!me){nextRoute="#/enter";return void(location.hash="#/register")}
   main(`<div style="padding-top:30px"><div class="sk"></div></div>`,t);
-  await Promise.race([dataPromise,new Promise(r=>setTimeout(r,6000))]);if(t!==tok)return;
+  await Promise.race([dataPromise,new Promise(r=>setTimeout(r,8000))]);if(t!==tok)return;
   let mine=ideas.find(i=>i.uid===me.uid);
   if(dataState==="error"){
-    try{const q=await withTO(FS.getDocs(FS.query(FS.collection(db,"ideas"),FS.where("uid","==",me.uid))),10000);const d=q.docs[0];if(d)mine=Object.assign({id:d.id},d.data())}
+    try{const q=await withTO(FS.getDocs(FS.query(FS.collection(db,"ideas"),FS.where("uid","==",me.uid))),15000);const d=q.docs[0];if(d)mine=Object.assign({id:d.id},d.data())}
     catch(e){return void main(`<div style="padding-top:30px">${errCard("Could not check your entry because the server did not respond."+(e&&(e.code||e.message)?` <span class="m">(${esc(e.code||e.message)})</span>`:""),true)}</div>`,t)}
   }
   if(mine&&Date.now()-(window.__rf||0)>15000){window.__rf=Date.now();loadData().then(()=>{if(t===tok)render(false)}).catch(()=>{})}
@@ -569,6 +601,7 @@ ${F("utr","Payment UTR / transaction number",{req:1,max:30,ph:"12-digit UTR",hin
       ["title","summary","problem","solution","cost","impact","ai","aiw","aif","pitch","demo","photos","video"].forEach(k=>d[k]=g(k));
       await FS.addDoc(FS.collection(db,"ideas"),d);
       await loadData();nav();
+      try{ls.set("rb_cache_v2",JSON.stringify({ideas,byIdea,cfg,t:Date.now()}))}catch(e){}
       main(`<div class="authwrap"><div class="glass cut done auth"><svg class="ck" viewBox="0 0 84 84" aria-hidden="true"><circle cx="42" cy="42" r="38"/><path d="M26 43l11 11 21-23"/></svg><h1>Entry <span class="gd">received</span></h1><p class="m">The organizer will verify your payment. Your idea now appears in the gallery, where people can read and rate it.</p><a class="btn gold shine block" href="#/"><span>See all ideas</span></a></div></div>`,t);window.scrollTo(0,0);
     }catch(x){setMsg((x.code==="permission-denied"?"The server rejected this entry (permission denied). Check the Firestore rules. ":"")+(x.message||""));busy(b,false,"Submit my entry")}
   };
@@ -605,7 +638,7 @@ async function admin(t){
   const f=()=>{$("#tb").innerHTML="<tr><th>Idea<th>Track<th>Level<th>Rating<th>Person<th>UTR / Amount<th>Proof<th>Paid<th>Media verified<th>Status<th>Remove</tr>"+ideas.filter(i=>(!V("t")||i.track==V("t"))&&(!V("l")||i.level==V("l"))&&(!V("st")||i.status==V("st"))).sort((a,b)=>avg(b.id)-avg(a.id)).map(i=>{const u=us[i.uid]||{};return`<tr><td><a href="#/idea/${esc(i.id)}">${esc(i.title)}</a><td>${esc(i.track)}<td>${esc(i.level)}<td>${avg(i.id).toFixed(1)} (${cnt(i.id)})<td>${esc(u.name)}<br>${esc(u.phone)}<td>${esc(u.utr)}<br>₹${FEES[i.team]||149}<td>${u.shot?`<img class="shot" alt="Payment screenshot" data-shot="${esc(i.uid)}" src="${u.shot}">`:"–"}<td><input type="checkbox" aria-label="Paid" data-i="${esc(i.id)}" data-k="paid" ${i.paid?"checked":""}><td><input type="checkbox" aria-label="Media verified" data-i="${esc(i.id)}" data-k="mediaOk" ${i.mediaOk?"checked":""}><td><select data-i="${esc(i.id)}" data-k="status">${["submitted","shortlisted","selected","winner"].map(s=>`<option ${i.status==s?"selected":""}>${s}</option>`).join("")}</select><td><button type="button" class="link" data-del="${esc(i.id)}">Refund &amp; delete</button></tr>`}).join("")};
   ["t","l","st"].forEach(x=>$("#"+x).onchange=f);f();
   $("#tb").onchange=async e=>{const el=e.target,id=el.dataset.i,k=el.dataset.k;if(!id)return;const v=el.type=="checkbox"?el.checked:el.value,it=ideas.find(x=>x.id===id),old=it[k];
-    try{await FS.updateDoc(FS.doc(db,"ideas",id),{[k]:v});it[k]=v;toast("Saved")}catch(x){if(el.type=="checkbox")el.checked=!!old;else el.value=old;toast("Could not save: "+(x.code||x.message))}};
+    try{await FS.updateDoc(FS.doc(db,"ideas",id),{[k]:v});it[k]=v;try{ls.set("rb_cache_v2",JSON.stringify({ideas,byIdea,cfg,t:Date.now()}))}catch(e){}toast("Saved")}catch(x){if(el.type=="checkbox")el.checked=!!old;else el.value=old;toast("Could not save: "+(x.code||x.message))}};
   $("#tb").onclick=async e=>{const T=e.target;
     const sh=T.closest&&T.closest("[data-shot]");if(sh){const o=document.createElement("div");o.style.cssText="position:fixed;inset:0;z-index:99;background:rgba(0,0,0,.9);display:grid;place-items:center;padding:16px;cursor:zoom-out";const im=document.createElement("img");im.alt="Payment screenshot";im.style.cssText="max-width:100%;max-height:100%;border-radius:12px";im.src=(us[sh.dataset.shot]||{}).shot||"";o.appendChild(im);o.onclick=()=>o.remove();document.body.appendChild(o);return}
     const dl=T.closest&&T.closest("[data-del]");if(!dl)return;
@@ -616,10 +649,10 @@ async function admin(t){
       await FS.setDoc(FS.doc(db,"refunds",id),{uid:it.uid,name:u.name||"",phone:u.phone||"",email:u.email||"",utr:u.utr||"",amount:amt,reason:why.trim(),title:it.title||"",created:Date.now(),done:false});
       await FS.deleteDoc(FS.doc(db,"ideas",id));
       try{const rs=await FS.getDocs(FS.query(FS.collection(db,"ratings"),FS.where("idea","==",id)));await Promise.all(rs.docs.map(d=>FS.deleteDoc(d.ref)))}catch(x){}
-      ideas=ideas.filter(x=>x.id!==id);delete byIdea[id];toast("Deleted. Refund listed.");admin(tok)}
+      ideas=ideas.filter(x=>x.id!==id);delete byIdea[id];try{ls.set("rb_cache_v2",JSON.stringify({ideas,byIdea,cfg,t:Date.now()}))}catch(e){}toast("Deleted. Refund listed.");admin(tok)}
     catch(x){toast("Could not delete: "+(x.code||x.message))}};
   $("#rft").onchange=async e=>{const el=e.target,id=el.dataset.rf;if(!id)return;try{await FS.updateDoc(FS.doc(db,"refunds",id),{done:el.checked});toast("Saved")}catch(x){el.checked=!el.checked;toast("Could not save: "+(x.code||x.message))}};
-  $("#us").onclick=async()=>{try{await FS.setDoc(FS.doc(db,"settings","pay"),{upi:V("upi")});cfg.pay={upi:V("upi")};toast("Saved")}catch(x){toast("Could not save: "+(x.code||x.message))}};
+  $("#us").onclick=async()=>{try{await FS.setDoc(FS.doc(db,"settings","pay"),{upi:V("upi")});cfg.pay={upi:V("upi")};try{ls.set("rb_cache_v2",JSON.stringify({ideas,byIdea,cfg,t:Date.now()}))}catch(e){}toast("Saved")}catch(x){toast("Could not save: "+(x.code||x.message))}};
   $("#ca").onclick=async()=>{if(!V("cc")||!V("ce"))return toast("Enter name, email and code.");try{await FS.setDoc(FS.doc(db,"creators",V("cc")),{name:V("cn"),email:V("ce")});admin(tok)}catch(x){toast("Could not add: "+(x.code||x.message))}};
 }
 
@@ -639,7 +672,7 @@ async function render(toTop){
 document.addEventListener("click",async e=>{
   const T=e.target;if(!T.closest)return;
   if(!T.closest(".menu")||T.closest(".pop a"))$$(".menu[open]").forEach(d=>d.open=false);
-  const lo=T.closest("#lo");if(lo){e.preventDefault();try{await AU.signOut(auth)}catch(x){}toast("Logged out");location.hash="#/";return}
+  const lo=T.closest("#lo");if(lo){e.preventDefault();try{await AU.signOut(auth)}catch(x){}try{localStorage.removeItem("rb_cache_v2")}catch(x){}toast("Logged out");location.hash="#/";return}
   const j=T.closest("[data-jump]");if(j){e.preventDefault();const el=document.getElementById(j.dataset.jump);if(el)el.scrollIntoView({behavior:"smooth",block:"start"});return}
   const ey=T.closest("[data-eye]");if(ey){const i=document.getElementById(ey.dataset.eye);const show=i.type==="password";i.type=show?"text":"password";ey.innerHTML=show?ICON.eyeoff:ICON.eye;ey.setAttribute("aria-label",show?"Hide password":"Show password");return}
   const em=T.closest("[data-embed]");if(em){const f=document.createElement("div");f.className="frame"+(em.classList.contains("deck")?" tall":"");f.innerHTML=`<iframe class="${em.dataset.bl==="1"?"blur":""}" src="${esc(em.dataset.embed)}" allow="autoplay; fullscreen" allowfullscreen loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin allow-presentation allow-popups" title="Media preview"></iframe>`;em.replaceWith(f);return}
@@ -649,7 +682,7 @@ document.addEventListener("click",async e=>{
     const id=rb.dataset.idea,v=+rb.dataset.rate;
     if(!me){nextRoute=location.hash||"#/";toast("Log in to rate this idea");location.hash="#/login";return}
     const it=ideas.find(x=>x.id===id);if(!it||it.uid===me.uid)return;
-    try{await FS.setDoc(FS.doc(db,"ratings",id+"_"+me.uid),{idea:id,uid:me.uid,v});if(!byIdea[id])byIdea[id]={};byIdea[id][me.uid]=v;refreshRate(id);toast("Thanks! You rated "+v+" star"+(v>1?"s":""))}
+    try{await FS.setDoc(FS.doc(db,"ratings",id+"_"+me.uid),{idea:id,uid:me.uid,v});if(!byIdea[id])byIdea[id]={};byIdea[id][me.uid]=v;refreshRate(id);try{ls.set("rb_cache_v2",JSON.stringify({ideas,byIdea,cfg,t:Date.now()}))}catch(e){}toast("Thanks! You rated "+v+" star"+(v>1?"s":""))}
     catch(x){toast("Could not save your rating: "+(x.code||x.message))}
   }
 });
