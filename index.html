@@ -1,0 +1,654 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#08080b">
+<title>RABHA Web &amp; Project Development Competition</title><meta name="description" content="RABHA Web & Project Development Competition: share your project idea, get rated by the community, build it in 10 days and win prizes. Solo or teams of up to 5.">
+<meta property="og:type" content="website"><meta property="og:site_name" content="RABHA"><meta property="og:title" content="RABHA Web &amp; Project Development Competition"><meta property="og:description" content="RABHA Web & Project Development Competition: share your project idea, get rated by the community, build it in 10 days and win prizes. Solo or teams of up to 5."><meta property="og:image" content="https://YOUR-SITE.netlify.app/og.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="RABHA Web &amp; Project Development Competition"><meta name="twitter:description" content="RABHA Web & Project Development Competition: share your project idea, get rated by the community, build it in 10 days and win prizes. Solo or teams of up to 5."><meta name="twitter:image" content="https://YOUR-SITE.netlify.app/og.png">
+<link rel="icon" type="image/png" href="data:image/png;base64,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"><link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;800&display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;800&display=swap"></noscript>
+<link rel="preconnect" href="https://www.gstatic.com" crossorigin><link rel="modulepreload" href="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js" crossorigin><link rel="modulepreload" href="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js" crossorigin><link rel="modulepreload" href="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js" crossorigin><style>:root{--bg:#08080b;--ink:#f6f4ee;--mute:#b9b5aa;--line:rgba(255,255,255,.15);--glass:rgba(255,255,255,.07);--gold:#ffd21f;--gold2:#ffb800;--amber:#ff8a1f;--cyan:#5cc8ff;--bad:#ff8d9b;--ok:#4be3b0;--display:"Sora",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--body:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans Gujarati","Noto Sans Devanagari",sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font:16px/1.6 var(--body);color:var(--ink);background:var(--bg);min-height:100vh;padding:env(safe-area-inset-top,0) 0 env(safe-area-inset-bottom,0);overflow-x:hidden}
+a{color:var(--cyan)}a:hover{color:#fff}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:6px}
+h1,h2,h3{font-family:var(--display);line-height:1.2;margin:.2em 0 .5em}
+img{max-width:100%}
+.m{color:var(--mute);font-size:14px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* animated background */
+.bg{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+.bg .rb{transform-origin:50% 50%;will-change:transform}
+.bg .a{animation:drift1 22s ease-in-out infinite alternate}
+.bg .b{animation:drift2 28s ease-in-out infinite alternate}
+.bg .c{animation:drift3 34s ease-in-out infinite alternate}
+@keyframes drift1{to{transform:translate(40px,-30px) rotate(2deg)}}
+@keyframes drift2{to{transform:translate(-50px,35px) rotate(-2.5deg)}}
+@keyframes drift3{to{transform:translate(30px,40px) rotate(1.5deg)}}
+.vig{position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(120% 90% at 50% 40%,transparent 35%,rgba(8,8,11,.78))}
+
+/* header */
+.top{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px clamp(12px,3vw,28px);background:rgba(8,8,11,.62);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.brand img{height:46px;width:auto;display:block;filter:drop-shadow(0 4px 14px rgba(92,200,255,.35))}
+.brand b{font-family:var(--display);font-size:18px;letter-spacing:.14em}
+.acts{display:flex;align-items:center;gap:8px}
+.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:8px;font:700 15px/1 var(--body);color:var(--ink);text-decoration:none;padding:12px 20px;border-radius:14px;border:1px solid var(--line);background:var(--glass);cursor:pointer;transition:transform .15s,box-shadow .2s,background .2s}
+.btn:hover{color:var(--ink);background:rgba(255,255,255,.13);transform:translateY(-1px)}
+.btn svg{width:18px;height:18px;flex:none}
+.btn.gold{color:#1b1400;border-color:transparent;background:linear-gradient(180deg,#ffe65c,#ffc400);box-shadow:0 8px 26px rgba(255,196,0,.32),inset 0 1px 0 rgba(255,255,255,.55)}
+.btn.gold:hover{color:#1b1400;background:linear-gradient(180deg,#fff07a,#ffcd1a);box-shadow:0 10px 32px rgba(255,196,0,.5),inset 0 1px 0 rgba(255,255,255,.6)}
+.btn.shine::after{content:"";position:absolute;top:0;left:-70%;width:45%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.75),transparent);transform:skewX(-18deg);transition:left .6s}
+.btn.shine:hover::after{left:130%}
+.btn.block{width:100%}
+.btn[disabled]{opacity:.6;cursor:wait;transform:none}
+.btn.busy::before{content:"";width:16px;height:16px;border-radius:50%;border:2px solid currentColor;border-right-color:transparent;animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.menu{position:relative}.menu summary{list-style:none;cursor:pointer}.menu summary::-webkit-details-marker{display:none}
+.av{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--amber));color:#1b1400;font:800 17px var(--display)}
+.pop{position:absolute;right:0;top:50px;min-width:210px;padding:10px;border-radius:16px;background:rgba(18,18,22,.96);border:1px solid var(--line);box-shadow:0 20px 50px rgba(0,0,0,.6);display:grid;gap:2px}
+.pop a{padding:9px 10px;border-radius:10px;color:var(--ink);text-decoration:none}.pop a:hover{background:rgba(255,255,255,.08)}
+.pop .m{padding:4px 10px 8px;word-break:break-all}
+
+main{max-width:880px;margin:0 auto;padding:0 clamp(12px,3vw,20px) 40px}
+main.wide{max-width:1100px}
+
+/* masthead */
+.masthead{position:relative;text-align:center;padding:clamp(34px,7vw,64px) 6px 26px;isolation:isolate}
+.masthead::before{content:"";position:absolute;inset:-30px -10px 0;z-index:-1;opacity:.13;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100' viewBox='0 0 56 100'%3E%3Cpath d='M28 66L0 50L0 16L28 0L56 16L56 50L28 66L28 100' fill='none' stroke='%23ffd21f' stroke-width='1.2'/%3E%3Cpath d='M28 0L28 34L0 50L0 84L28 100L56 84L56 50L28 34' fill='none' stroke='%23ffd21f' stroke-width='1.2'/%3E%3C/svg%3E");-webkit-mask-image:radial-gradient(closest-side,#000 30%,transparent);mask-image:radial-gradient(closest-side,#000 30%,transparent)}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:99px;border:1px solid rgba(255,210,31,.4);background:rgba(255,210,31,.1);color:#ffe27a;font:600 13px var(--body)}
+.pill i{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 rgba(75,227,176,.7);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(75,227,176,0)}100%{box-shadow:0 0 0 0 rgba(75,227,176,0)}}
+.wordmark{margin:18px 0 0;font:800 clamp(52px,16vw,118px)/1 var(--display);letter-spacing:.12em;padding-left:.12em;background:linear-gradient(100deg,#ffb800 0%,#ffe45c 30%,#fff6c2 50%,#ffd21f 62%,#ff8a1f 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 2.8s ease-out 1 both;filter:drop-shadow(0 8px 30px rgba(255,160,0,.3))}
+@keyframes sheen{from{background-position:100% 0}to{background-position:0 0}}
+.fullname{text-shadow:0 2px 20px rgba(0,0,0,.9);margin:8px auto 0;max-width:760px;font:600 clamp(20px,5.2vw,38px)/1.25 var(--display);letter-spacing:.01em}
+.rule{width:min(320px,70%);height:2px;margin:20px auto;background:linear-gradient(90deg,transparent,var(--gold),var(--amber),transparent)}
+.tag-line{margin:0 auto;max-width:560px;color:var(--mute);font-size:clamp(15px,3.6vw,18px)}
+.jump{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+
+/* glass */
+.glass{position:relative;background:linear-gradient(160deg,rgba(255,255,255,.1),rgba(255,255,255,.04));border:1px solid var(--line);border-radius:24px;padding:clamp(16px,3.5vw,26px);-webkit-backdrop-filter:blur(22px) saturate(140%);backdrop-filter:blur(22px) saturate(140%);box-shadow:0 18px 50px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.12)}
+.glass.cut::before,.glass.cut::after{content:"";position:absolute;width:74px;height:74px;border:1px solid var(--line);background:rgba(255,255,255,.05);border-radius:20px;pointer-events:none}
+.glass.cut::before{top:-14px;left:-14px;transform:rotate(-14deg);clip-path:polygon(0 0,100% 0,0 100%)}
+.glass.cut::after{bottom:-14px;right:-14px;transform:rotate(-14deg);clip-path:polygon(100% 0,100% 100%,0 100%)}
+.note{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:14px;background:rgba(92,200,255,.09);border:1px solid rgba(92,200,255,.3);font-size:14px;margin:12px 0}
+.note svg{width:18px;height:18px;flex:none;margin-top:2px;color:var(--cyan)}
+.note.err{background:rgba(255,141,155,.1);border-color:rgba(255,141,155,.45);color:#ffd9de}.note.err svg{color:var(--bad)}
+.note.ok{background:rgba(75,227,176,.1);border-color:rgba(75,227,176,.4)}.note.ok svg{color:var(--ok)}
+
+/* feed */
+.feedhead{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:26px 2px 12px}
+.feedhead h2{font-size:clamp(22px,5vw,30px);margin:0}
+.filters{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:10px;margin-bottom:16px}
+@media(max-width:640px){.filters{grid-template-columns:repeat(3,1fr);gap:8px}.filters input{grid-column:1/-1}.filters select{padding:12px 8px;font-size:14px}}
+input,select,textarea{font:inherit;color:var(--ink);width:100%;padding:12px 14px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.06);transition:border-color .2s,box-shadow .2s,background .2s}
+select option{color:#111;background:#fff}
+input::placeholder,textarea::placeholder{color:#9a968c}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(255,210,31,.22);background:rgba(255,255,255,.09)}
+textarea{resize:vertical;min-height:90px}
+.idea{margin:0 0 16px;padding:clamp(16px,3vw,24px)}
+.idea h3{font-size:clamp(20px,4.6vw,26px);margin:.35em 0 .3em}
+.tags{display:flex;gap:6px;flex-wrap:wrap}
+.tag{display:inline-block;padding:3px 11px;border-radius:99px;font-size:12.5px;font-weight:600;background:rgba(255,255,255,.1);border:1px solid var(--line);color:#e7e3d8}
+.tag.web{background:rgba(92,200,255,.14);border-color:rgba(92,200,255,.4);color:#bfe8ff}.tag.project{background:rgba(255,138,31,.15);border-color:rgba(255,138,31,.45);color:#ffd2a6}
+.sum{margin:.2em 0 14px;color:#e9e5da;overflow-wrap:anywhere}
+.rate{display:flex;align-items:center;justify-content:space-between;gap:12px 20px;flex-wrap:wrap;padding:12px 14px;border-radius:16px;background:rgba(0,0,0,.28);border:1px solid var(--line);margin-bottom:14px}
+.score{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.score b{font:800 26px var(--display)}
+.sbar{font-size:18px;letter-spacing:2px;background:linear-gradient(90deg,var(--gold) var(--p),#55555d var(--p));-webkit-background-clip:text;background-clip:text;color:transparent}
+.rate-in{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.stars{display:flex;flex-direction:row-reverse;gap:2px}
+.stars button{all:unset;cursor:pointer;width:34px;height:34px;display:grid;place-items:center;color:#6d6d75;border-radius:8px;transition:color .15s,transform .15s}
+.stars button svg{width:26px;height:26px}
+.stars button.on,.stars button:hover,.stars button:hover~button{color:var(--gold)}
+.stars button:hover{transform:scale(1.12)}
+.stars button:focus-visible{outline:2px solid var(--gold)}
+.photos{display:grid;gap:8px;margin:0 0 12px;grid-template-columns:1fr 1fr}
+.photos.n1{grid-template-columns:1fr}
+.photos img{width:100%;height:100%;max-height:300px;aspect-ratio:16/10;object-fit:cover;border-radius:16px;border:1px solid var(--line);background:#111}
+.blur{filter:blur(16px) saturate(.8)}
+.pii{filter:blur(6px);user-select:none;-webkit-user-select:none}
+.photos{overflow:hidden;border-radius:16px}
+.vid,.deck{all:unset;box-sizing:border-box;cursor:pointer;position:relative;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;border-radius:16px;border:1px solid var(--line);overflow:hidden;margin:0 0 12px}
+.vid{aspect-ratio:16/9;background:linear-gradient(135deg,#1c1c22,#101015)}
+.vid .thumb{position:absolute;inset:-20px;background-size:cover;background-position:center}
+.play{position:relative;display:grid;place-items:center;width:64px;height:64px;border-radius:50%;background:rgba(255,210,31,.95);color:#1b1400;box-shadow:0 8px 30px rgba(0,0,0,.5);transition:transform .2s}
+.vid:hover .play{transform:scale(1.1)}
+.play svg{width:26px;height:26px;margin-left:3px}
+.deck{padding:14px 16px;background:rgba(255,255,255,.07);font-weight:700}
+.deck:hover{background:rgba(255,255,255,.12)}.deck svg{width:20px;height:20px;color:var(--gold)}
+.frame{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line);margin:0 0 12px;aspect-ratio:16/9;background:#000}
+.frame.tall{aspect-ratio:auto;height:min(70vh,520px)}
+.frame iframe,.idea video{width:100%;height:100%;border:0;display:block}
+.idea video{border-radius:16px;margin:0 0 12px;max-height:420px;background:#000}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 12px}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:12px;font-size:14px;font-weight:600;border:1px solid var(--line);background:rgba(255,255,255,.07);color:var(--ink);text-decoration:none}
+.chip.dim{color:var(--mute);font-weight:500}
+.idea details{margin-top:6px;border-top:1px solid var(--line);padding-top:10px}
+.idea summary{cursor:pointer;font-weight:700;padding:6px 0;color:var(--gold)}
+.idea details div.q{margin:12px 0}.q b{display:block;color:#fff;margin-bottom:2px;font-size:14px}.q span{color:#dcd8cc;overflow-wrap:anywhere}
+.sk{height:210px;border-radius:24px;margin-bottom:16px;background:linear-gradient(100deg,rgba(255,255,255,.05) 30%,rgba(255,255,255,.12) 50%,rgba(255,255,255,.05) 70%);background-size:300% 100%;animation:shim 1.4s linear infinite}
+@keyframes shim{to{background-position:-300% 0}}
+.empty{text-align:center;padding:36px 16px}
+
+/* how / fees */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:12px 0}
+.steps .glass{padding:16px;border-radius:20px}.steps .n{font:800 28px var(--display);color:var(--gold)}
+.fees{display:flex;gap:8px;flex-wrap:wrap}.fees .tag{font-size:14px;padding:6px 14px}
+
+/* auth + forms */
+.authwrap{min-height:calc(100vh - 220px);display:grid;place-items:center;padding:34px 0 20px}
+.auth{width:min(460px,100%);animation:rise .6s cubic-bezier(.2,.8,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(22px) scale(.98)}to{opacity:1;transform:none}}
+.auth h1{font-size:clamp(28px,7vw,36px);margin:.1em 0 .1em}.gd{color:var(--gold)}
+label{display:block;font-size:14px;font-weight:600;margin:14px 0 6px;color:#ece8dc}
+.inp{position:relative;display:flex;align-items:center}
+.inp>svg{position:absolute;left:14px;width:18px;height:18px;color:#a39f94;pointer-events:none}
+.inp input{padding-left:44px}
+.inp .eye{all:unset;cursor:pointer;position:absolute;right:8px;width:36px;height:36px;display:grid;place-items:center;color:#a39f94;border-radius:8px}.inp .eye:hover{color:#fff}.inp .eye svg{width:18px;height:18px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:480px){.two{grid-template-columns:1fr}}
+.link{all:unset;cursor:pointer;color:var(--cyan);font-size:14px}.link:hover{color:#fff;text-decoration:underline}
+.r{text-align:right;margin:8px 0 14px}
+.or{display:flex;align-items:center;gap:12px;color:var(--mute);font-size:13px;margin:16px 0}.or::before,.or::after{content:"";flex:1;height:1px;background:var(--line)}
+.sw{text-align:center;margin:18px 0 0;color:var(--mute)}
+.msg{margin:12px 0 0;min-height:1.2em;font-size:14px;color:var(--bad)}.msg.ok{color:var(--ok)}
+.chk{display:flex;gap:10px;align-items:flex-start;margin:12px 0 4px;font-size:14px;flex-wrap:wrap}
+.chk input{width:20px;height:20px;margin:2px 0 0;padding:0;accent-color:var(--gold);flex:none}
+.chk span{flex:1;min-width:200px}
+.chk .fe{flex-basis:100%;padding-left:30px}
+.fe{display:block;color:var(--bad);font-size:13px;min-height:0}
+.f.bad input,.f.bad select,.f.bad textarea{border-color:var(--bad)}
+.hint{display:block;color:var(--mute);font-size:13px;margin-top:4px}
+.rq{color:var(--gold)}
+.hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}
+.sec{margin:0 0 16px}
+.sec h2{display:flex;align-items:center;gap:12px;font-size:20px;margin:0 0 4px}
+.sec h2 i{display:grid;place-items:center;width:34px;height:34px;border-radius:12px;background:linear-gradient(135deg,var(--gold),var(--amber));color:#1b1400;font:800 16px var(--display);font-style:normal}
+.qrbox{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin:10px 0}.qrbox svg{width:180px;height:180px;border-radius:12px;background:#fff}.shot{width:56px;height:56px;object-fit:cover;border-radius:8px;cursor:zoom-in;display:block}.pv{max-width:180px;border-radius:12px;margin-top:8px}.pay{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;padding:14px 16px;border-radius:16px;background:rgba(255,210,31,.1);border:1px solid rgba(255,210,31,.4);margin:8px 0}
+.pay b{font:800 26px var(--display);color:var(--gold)}
+.pay code{font:700 15px ui-monospace,Menlo,monospace;background:rgba(0,0,0,.35);padding:4px 10px;border-radius:8px;word-break:break-all}
+.done{text-align:center;padding:30px 10px}
+.done .ck{width:84px;height:84px;margin:0 auto 14px}
+.done .ck circle{fill:none;stroke:var(--ok);stroke-width:4;stroke-dasharray:240;stroke-dashoffset:240;animation:dash .7s ease-out forwards}
+.done .ck path{fill:none;stroke:var(--ok);stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:60;stroke-dashoffset:60;animation:dash .45s .55s ease-out forwards}
+@keyframes dash{to{stroke-dashoffset:0}}
+
+/* tables (admin / creator) */
+.tscroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:14px}td,th{padding:8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+td input[type=checkbox]{width:20px;height:20px;accent-color:var(--gold)}td select{padding:6px 8px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.row>*{flex:1;min-width:140px}.row>button{flex:none}
+
+/* legal */
+.legal{display:none;max-width:820px;margin:0 auto;padding:30px clamp(12px,3vw,20px) 40px;scroll-margin-top:90px}
+.legal:target{display:block}
+.legal:target~main{display:none}
+.legal.static{display:block}
+.legal h2{font-size:clamp(26px,6vw,36px)}
+.legal h3{color:var(--gold);margin-top:1.5em;font-size:18px}
+.legal li{margin:6px 0}.legal p,.legal li{color:#e6e2d7;overflow-wrap:anywhere}
+
+footer{text-align:center;padding:26px 16px 36px;color:var(--mute);font-size:14px;border-top:1px solid var(--line);background:rgba(8,8,11,.55)}
+footer a{color:var(--mute);margin:0 8px;text-decoration:underline;text-underline-offset:3px}footer a:hover{color:#fff}
+
+/* toast + cookie */
+.toast{position:fixed;left:50%;bottom:90px;transform:translate(-50%,20px);opacity:0;z-index:60;max-width:min(92vw,420px);padding:12px 18px;border-radius:14px;background:rgba(24,24,28,.97);border:1px solid var(--line);color:#fff;font-size:14px;box-shadow:0 14px 40px rgba(0,0,0,.6);transition:opacity .25s,transform .25s;pointer-events:none}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.cookie{position:fixed;left:12px;right:12px;bottom:12px;z-index:50;max-width:620px;margin:0 auto;display:flex;gap:12px 16px;align-items:center;flex-wrap:wrap;padding:14px 16px;border-radius:18px;background:rgba(20,20,24,.96);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid var(--line);box-shadow:0 18px 50px rgba(0,0,0,.6);font-size:14px}
+.cookie p{margin:0;flex:1;min-width:220px;color:#e6e2d7}
+.cookie .btn{padding:9px 16px;font-size:14px}
+
+@media(max-width:480px){.brand b{display:none}.btn{padding:11px 15px;font-size:14px}.acts{gap:6px}.glass.cut::before,.glass.cut::after{display:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+[hidden]{display:none!important}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}@media(max-width:600px){.three{grid-template-columns:1fr}}
+.mast{margin:0}.wordmark,.fullname{display:block}
+.legal .back{display:inline-block;margin-bottom:10px}
+</style></head><body><svg class="bg" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><defs>
+<linearGradient id="g1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ff8a1f" stop-opacity="0"/><stop offset=".35" stop-color="#ffb800"/><stop offset=".7" stop-color="#ffe45c"/><stop offset="1" stop-color="#ff8a1f" stop-opacity="0"/></linearGradient>
+<linearGradient id="g2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffb800" stop-opacity="0"/><stop offset=".5" stop-color="#ff8a1f"/><stop offset="1" stop-color="#ffd21f" stop-opacity="0"/></linearGradient>
+<linearGradient id="g3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b2b33"/><stop offset="1" stop-color="#0d0d11"/></linearGradient></defs>
+<g class="rb b"><path d="M-160 520 C 180 300, 460 760, 800 520 S 1220 300, 1400 420" stroke="url(#g3)" stroke-width="150" fill="none" stroke-linecap="round"/><path d="M-160 470 C 180 250, 460 710, 800 470 S 1220 250, 1400 370" stroke="#fff" stroke-opacity=".1" stroke-width="2" fill="none"/></g>
+<g class="rb a"><path d="M-150 170 C 200 -40, 480 430, 860 250 S 1260 40, 1400 150" stroke="url(#g1)" stroke-width="30" fill="none" opacity=".34" stroke-linecap="round"/><path d="M-150 170 C 200 -40, 480 430, 860 250 S 1260 40, 1400 150" stroke="url(#g1)" stroke-width="3" fill="none" opacity=".95"/><path d="M-150 215 C 200 5, 480 475, 860 295 S 1260 85, 1400 195" stroke="url(#g2)" stroke-width="2" fill="none" opacity=".6"/></g>
+<g class="rb c"><path d="M-100 770 C 260 560, 560 930, 900 710 S 1250 560, 1350 650" stroke="url(#g2)" stroke-width="24" fill="none" opacity=".4" stroke-linecap="round"/><path d="M-100 770 C 260 560, 560 930, 900 710 S 1250 560, 1350 650" stroke="url(#g1)" stroke-width="2.5" fill="none" opacity=".85"/></g>
+</svg><div class="vig"></div><header class="top"><a class="brand" href="#/" aria-label="RABHA home"><img id="lg" src="data:image/png;base64,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" alt="RABHA logo" width="40" height="47"><b>RABHA</b></a><div class="acts" id="acts"><a class="btn" href="#/login">Login</a><a class="btn gold shine" href="#/register"><span>Register</span></a></div></header><section class="legal" id="/terms"><a class="back" href="#/">← Back to ideas</a><h2>Terms &amp; Conditions</h2><p class="m">Version 1 · Last updated 12 October 2026 · Please read carefully before registering.</p>
+<h3>1. Organizer and contact</h3><p>This competition is organized by RABHA ("Organizer"). Contact: Instagram <a href="https://www.instagram.com/rabha_automation" target="_blank" rel="noopener">@rabha_automation</a>. Dates and updates are announced there and on this website.</p>
+<h3>2. Eligibility and entries</h3><ul><li>Students and other individuals may participate, solo or in a team of up to 5 people.</li><li>One person may be part of only one entry. Submitting more than one entry (solo and team, or several projects) leads to disqualification without refund.</li><li>Participants under 18 must have the consent of a parent or guardian.</li><li>All information you provide must be true.</li></ul>
+<h3>3. Registration fee</h3><p>Fee by entry size: 1 person ₹149, 2 persons ₹249, 3 persons ₹349, 4 persons ₹399, 5 persons ₹499. Registration is complete only after the Organizer verifies your payment (UTR number and payment screenshot). Paid fees are not refundable, except as stated in sections 4 and 5.</p>
+<h3>4. Cancellation, postponement and refund</h3><ul><li>If the Organizer cancels the competition, or cannot hold it for any reason, registration fees will be refunded after deducting unavoidable costs already spent (payment gateway charges, platform and promotion costs and any referral commission earned). The deductions will be shown to participants and refunds made within 30 days.</li><li>If the competition is postponed, your registration stays valid for the new dates.</li><li>Duplicate or wrong payments will be refunded after verification.</li><li>If the Organizer removes an entry because the idea is illegal, harmful, unsuitable or against these terms, the entry will be deleted and the registration fee will be refunded to the payer. This does not apply to fraud, fake payment proof or plagiarism (see sections 6 and 8).</li><li>If the competition has to be stopped for any reason, the fee will be refunded after a deduction of unavoidable costs, as described above. The deducted amount will be told to you.</li></ul>
+<h3>5. How the competition works</h3><ul><li>Participants submit a project idea. Ideas are shown on this website and rated by the community and by the Organizer.</li><li>The top ideas are shortlisted. Selected teams get 10 days to build their project and submit a working demo or link and a pitch deck (PDF or link). Photos and videos are optional.</li><li>The Organizer tests the submissions and announces winners. The Organizer's decision is final.</li><li>Selected teams that miss the deadline may be replaced by another team.</li></ul>
+<h3>6. Use of AI and originality</h3><p>You may use AI tools, but you must honestly disclose where and how much you used them. Your idea and work must be your own and must not copy another person's work. Participants may be asked to explain their code and project live. Undisclosed AI use, plagiarism or inability to explain the work can lead to disqualification.</p>
+<h3>7. Prizes</h3><p>The cash prize pool depends on the number of verified registrations and will be announced before registration closes. Gadget prizes are given only if officially announced. Prizes are given to the winning entry; a team shares the prize among its members itself, and the Organizer is not responsible for that division. Winners are responsible for any applicable taxes.</p>
+<h3>8. Ratings and fair play</h3><p>Fake accounts, vote manipulation, fake payment proof, harassment or any fraud lead to disqualification and loss of any prize or refund. You cannot rate your own idea.</p>
+<h3>9. Photos, videos, pitch decks and personal information</h3><ul><li>Do not include personal information (names, mobile numbers, email addresses, photos of faces, social media handles) in your photos, videos, pitch deck or idea text. Do not include your project's source code. Show only how the idea or project works, using a normal pitch deck or PDF.</li><li>Photos, videos and pitch decks are shown blurred to the public until the Organizer has checked them. Phone numbers and email addresses typed into public text are hidden automatically. This is a safety measure and does not replace your own responsibility.</li><li>The Organizer may hide, blur, edit or remove any content that contains personal information, source code, copyrighted material you do not own, or anything illegal, abusive or misleading.</li><li>You are responsible for everything you upload or link.</li></ul>
+<h3>10. Ownership of work</h3><p>You keep ownership of your idea and project. By participating you allow the Organizer to display your idea title, description, links and winner details on the website and social media for promotion.</p>
+<h3>11. Referral creators</h3><ul><li>Creators receive a personal referral link. A registration counts for a creator only when it was made through that link and the Organizer has verified its payment.</li><li>Commission is calculated on the fees of verified paid registrations: no commission below 10 verified registrations, 8% from 10 up to 100, and 10% above 100.</li><li>Commission is paid after registration closes. Fake, self-made or duplicate registrations are not counted, and the Organizer may cancel a creator's commission for misuse.</li><li>Creators see only counts and amounts, never participants' personal details, and must not misuse participants' information.</li></ul>
+<h3>12. Limitation of liability</h3><p>The competition is provided as is. The Organizer is not liable for technical problems, internet or payment-service failures, or indirect losses. Our total responsibility is limited to the registration fee you paid.</p>
+<h3>13. Changes and governing law</h3><p>The Organizer may update these terms, dates, or rules; important changes will be announced. Continuing to participate means you accept the updated terms. These terms are governed by the laws of India.</p>
+</section><section class="legal" id="/privacy"><a class="back" href="#/">← Back to ideas</a><h2>Privacy Policy</h2><p class="m">Version 1 · Last updated 12 October 2026 · This explains what information we collect and how we use it.</p>
+<h3>1. Information we collect</h3><p>When you create an account and register we collect: name, email, password (stored securely by Google Firebase, we cannot read it), WhatsApp number, city, school or college and course details, what you do, profile photo link (optional), team member details, your project details and links, payment UTR number, a screenshot of your payment (visible only to the Organizer), and which referral link you used. If you sign in with Google, we receive your name and email from Google.</p>
+<h3>2. Why we collect it</h3><ul><li>To create your account and registration, and to verify your payment.</li><li>To contact you on WhatsApp or email about the competition, results and prizes.</li><li>To show ideas, run ratings and select winners.</li><li>To calculate referral commission for creators.</li></ul>
+<h3>3. Who can see your information</h3><ul><li>Public: your idea title, summary and project details, ratings, and your photos, videos and pitch deck (blurred until the Organizer has checked them).</li><li>Private: your name, phone, email, payment details and personal profile are visible only to the Organizer.</li><li>Referral creators only see counts and amounts; they do not see participants' personal details.</li><li>We do not sell your data. We share it only if required by law.</li></ul>
+<h3>4. Protecting personal data in public content</h3><p>Please do not put personal information or source code in your photos, videos, pitch deck or idea text. Phone numbers and email addresses written in public text are hidden automatically, and uploaded media stays blurred until the Organizer confirms it contains no personal information. If something personal is visible by mistake, contact us and we will remove it.</p>
+<h3>5. Cookies and local storage</h3><ul><li>Essential: we keep you logged in (Firebase sign-in) and remember the referral code from the link you opened. The site cannot work without these.</li><li>Your choice: your cookie choice is saved on your device. If you accept all and analytics is switched on, we use Google Analytics to count visits. If you choose essential only, no analytics is loaded.</li></ul>
+<h3>6. Storage and security</h3><p>Data is stored with Google Firebase. We use access rules so that private details are not public, but no online system is completely risk-free.</p>
+<h3>7. Children</h3><p>If you are under 18, register only with the consent of a parent or guardian. Parents may contact us to review or delete a child's information.</p>
+<h3>8. Retention and your rights</h3><p>We keep data while the competition and its payments, results and disputes are active, and for a reasonable period after. You can ask to correct or delete your data by contacting <a href="https://www.instagram.com/rabha_automation" target="_blank" rel="noopener">@rabha_automation</a> on Instagram; some payment records may need to be kept.</p>
+<h3>9. Changes</h3><p>We may update this policy and will post the new version here.</p>
+</section><main id="app"><div class="authwrap"><div class="glass" style="text-align:center"><p><b>Loading RABHA…</b></p><noscript><p class="m">JavaScript is needed to see ideas and log in. You can still read the <a href="#/terms">Terms</a> and the <a href="#/privacy">Privacy Policy</a>.</p></noscript></div></div></main><footer><nav aria-label="Footer"><a href="#/terms">Terms &amp; Conditions</a><a href="#/privacy">Privacy Policy</a><a href="https://www.instagram.com/rabha_automation" target="_blank" rel="noopener">@rabha_automation</a></nav><div>© RABHA</div></footer><script>setTimeout(function(){if(!window.__ready){var a=document.getElementById("app");if(a)a.innerHTML='<div class="authwrap"><div class="glass"><b>The app could not start.</b><p class="m">This usually happens in a preview or HTML viewer that blocks JavaScript or web storage. Open the website in Chrome or Safari. The Terms and Privacy Policy still work: <a href="#/terms">Terms</a> · <a href="#/privacy">Privacy</a>.</p></div></div>'}},4000)</script><script>(function(){"use strict";
+/* ===== SETTINGS ===== */
+const CFG={apiKey:"AIzaSyAm93KUQBkZ42Fe5w6fDIOh93APfLwQfXQ",authDomain:"rabha-245a6.firebaseapp.com",projectId:"rabha-245a6",appId:"1:842930028121:web:e686b787f05a8c2741bb48"};
+const ADMIN="pFdbnmpccHS7C51zpG0eOKoyPZO2",RESULTS_OUT=false;
+const GA_ID="";            /* optional: paste a Google Analytics ID like G-XXXXXXXXXX (loads only after the visitor accepts cookies) */
+const FEES={1:149,2:249,3:349,4:399,5:499};
+const FBV="https://www.gstatic.com/firebasejs/10.12.2/";
+const TITLE="RABHA Web & Project Development Competition";
+/* ================================================================ */
+
+/* force HTTPS on a real website */
+try{if(location.protocol==="http:"&&!/^(localhost|127\.|192\.168\.|10\.)/.test(location.hostname))location.replace("https:"+location.href.substring(5))}catch(e){}
+
+/* storage that never crashes (some viewers block localStorage) */
+const mem={};
+const ls={get(k){try{return localStorage.getItem(k)}catch(e){return mem[k]==null?null:mem[k]}},set(k,v){try{localStorage.setItem(k,v)}catch(e){mem[k]=v}}};
+try{const r=new URLSearchParams(location.search).get("ref");if(r)ls.set("ref",r.slice(0,60))}catch(e){}
+
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>Array.from(r.querySelectorAll(s));
+const V=id=>((($("#"+id)||{}).value)||"").trim();
+const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const withTO=(p,ms)=>Promise.race([p,new Promise((_,rej)=>setTimeout(()=>rej(new Error("timeout")),ms||10000))]);
+
+/* icons */
+const S=(b,x)=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"${x||""}>${b}</svg>`;
+const ICON={
+user:S('<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>'),
+mail:S('<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/>'),
+lock:S('<rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>'),
+eye:S('<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>'),
+eyeoff:S('<path d="M17.94 17.94A10.9 10.9 0 0 1 12 19c-6.5 0-10-7-10-7a18 18 0 0 1 4.06-5.06M9.9 4.24A9.1 9.1 0 0 1 12 5c6.5 0 10 7 10 7a18 18 0 0 1-2.16 3.19M1 1l22 22"/>'),
+doc:S('<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h6"/>'),
+info:S('<circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/>'),
+shield:S('<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>'),
+star:'<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>',
+play:'<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>',
+google:'<svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"/><path fill="#FF3D00" d="M6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/><path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238C29.211 35.091 26.715 36 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/><path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303c-.792 2.237-2.231 4.166-4.087 5.571.001-.001.002-.001.003-.002l6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/></svg>'
+};
+
+/* ---------- state ---------- */
+let FS=null,AU=null,auth=null,db=null,watching=false;
+let me=null,authReady=false,ideas=[],byIdea={},cfg={},errs=[],dataState="loading";
+let nextRoute=null,holdRedirect=false,dataPromise=Promise.resolve(),tok=0;
+const isAdmin=()=>!!me&&me.uid===ADMIN;
+const main=(h,t)=>{if(t!==undefined&&t!==tok)return false;$("#app").innerHTML=h;return true};
+
+/* ---------- toast + errors ---------- */
+let tt;function toast(m){let t=$("#toast");if(!t){t=document.createElement("div");t.id="toast";t.className="toast";t.setAttribute("role","status");document.body.appendChild(t)}t.textContent=m;t.classList.add("show");clearTimeout(tt);tt=setTimeout(()=>t.classList.remove("show"),3400)}
+let errShown=false;function reportError(e){try{console.error(e)}catch(x){}if(!errShown){errShown=true;toast("Something went wrong. Please refresh and try again.")}}
+window.addEventListener("error",e=>reportError(e.error||e.message));
+window.addEventListener("unhandledrejection",e=>reportError(e.reason));
+
+/* ---------- firebase ---------- */
+async function initFB(){
+  const m=await Promise.all([import(FBV+"firebase-app.js"),import(FBV+"firebase-auth.js"),import(FBV+"firebase-firestore.js")]);
+  const app=m[0].initializeApp(CFG);AU=m[1];FS=m[2];auth=AU.getAuth(app);try{db=FS.initializeFirestore(app,{experimentalAutoDetectLongPolling:true})}catch(e){db=FS.getFirestore(app)}
+}
+function watchAuth(){
+  if(watching||!AU)return;watching=true;
+  AU.onAuthStateChanged(auth,u=>{me=u;authReady=true;nav();onAuth();
+    if(dataState==="error"||errs.length){dataPromise=loadData().catch(()=>{dataState="error"}).then(()=>{nav();if(!/^#\/(terms|privacy)/.test(location.hash))render(false)})}});
+}
+async function loadData(){
+  dataState="loading";errs=[];
+  let ideasFailed=false;
+  const g=async n=>{for(let k=0;k<2;k++){try{return(await withTO(FS.getDocs(FS.collection(db,n)),10000)).docs}catch(e){if(k===1||e.code==="permission-denied"||e.message==="timeout"){errs.push(n+" ("+(e.code||e.message)+")");if(n==="ideas")ideasFailed=true;return[]}}}return[]};
+  const r=await Promise.all([g("settings"),g("ideas"),g("ratings")]);
+  cfg={};r[0].forEach(d=>cfg[d.id]=d.data());
+  ideas=r[1].map(d=>Object.assign({id:d.id},d.data()));
+  byIdea={};r[2].forEach(d=>{const x=d.data();if(!byIdea[x.idea])byIdea[x.idea]={};byIdea[x.idea][x.uid]=x.v});
+  dataState=ideasFailed?"error":"ready";
+}
+function boot(){
+  const p=(FS?Promise.resolve():withTO(initFB(),15000)).then(()=>{watchAuth();return loadData()}).catch(e=>{dataState="error";errs.push(e.message||String(e))}).then(()=>{nav()});
+  dataPromise=p;return p;
+}
+
+/* ---------- header ---------- */
+function nav(){
+  const el=$("#acts");if(!el)return;
+  if(!me){el.innerHTML=`<a class="btn" href="#/login">${ICON.user}<span>Login</span></a><a class="btn gold shine" href="#/register"><span>Register</span></a>`;return}
+  const has=ideas.some(i=>i.uid===me.uid),nm=me.displayName||me.email||"?";
+  el.innerHTML=(has?"":`<a class="btn gold shine" href="#/enter"><span>Register</span></a>`)+`<details class="menu"><summary aria-label="Account menu"><span class="av">${esc(nm.charAt(0).toUpperCase())}</span></summary><div class="pop"><div class="m">${esc(me.email||nm)}</div><a href="#/enter">My entry</a><a href="#/creator">Creator dashboard</a>${isAdmin()?'<a href="#/admin">Admin</a>':""}<a href="#/" id="lo">Log out</a></div></details>`;
+}
+
+/* ---------- rating helpers ---------- */
+const vals=id=>Object.keys(byIdea[id]||{}).map(k=>byIdea[id][k]);
+const avg=id=>{const a=vals(id);return a.length?a.reduce((x,y)=>x+y,0)/a.length:0};
+const cnt=id=>vals(id).length;
+function ratingBox(i){
+  const a=avg(i.id),n=cnt(i.id),own=me&&me.uid===i.uid,my=me&&byIdea[i.id]?(byIdea[i.id][me.uid]||0):0;
+  const sc=`<div class="score"><b>${n?a.toFixed(1):"–"}</b><span class="sbar" style="--p:${(a/5*100).toFixed(0)}%" role="img" aria-label="${n?a.toFixed(1)+" out of 5":"Not rated yet"}">★★★★★</span><span class="m">${n} rating${n==1?"":"s"}</span></div>`;
+  if(own)return`<div class="rate" data-id="${i.id}">${sc}<span class="m">This is your idea</span></div>`;
+  const st=[5,4,3,2,1].map(v=>`<button type="button" class="${v<=my?"on":""}" data-rate="${v}" data-idea="${i.id}" aria-label="Rate ${v} star${v>1?"s":""}">${ICON.star}</button>`).join("");
+  return`<div class="rate" data-id="${i.id}">${sc}<div class="rate-in"><span class="m">${me?(my?"Your rating":"Rate this idea"):"Log in to rate"}</span><div class="stars">${st}</div></div></div>`;
+}
+function refreshRate(id){$$(`.rate[data-id="${id}"]`).forEach(el=>{const i=ideas.find(x=>x.id===id);if(i)el.outerHTML=ratingBox(i)})}
+
+/* ---------- privacy: hide phone numbers / emails in public text ---------- */
+const pii=s=>esc(s)
+  .replace(/(?:https?:\/\/)?(?:www\.)?(?:wa\.me|instagram\.com|t\.me|linkedin\.com\/in|facebook\.com)\/[^\s<]+/gi,m=>`<span class="pii" title="Hidden for privacy">${m}</span>`)
+  .replace(/[\w.+-]+@[\w-]+(?:\.[\w-]+)+/g,m=>`<span class="pii" title="Hidden for privacy">${m}</span>`)
+  .replace(/(^|[^\d])((?:\+?91[\s-]?)?[6-9]\d{4}[\s-]?\d{5})(?!\d)/g,(m,p,n)=>p+`<span class="pii" title="Hidden for privacy">${n}</span>`)
+  .replace(/\n/g,"<br>");
+
+/* ---------- media (photos, video, pitch deck) ---------- */
+const urls=s=>String(s||"").split(/[\s,]+/).filter(u=>/^https?:\/\/\S+$/i.test(u));
+const driveId=u=>{const m=u.match(/drive\.google\.com\/file\/d\/([\w-]+)/)||u.match(/drive\.google\.com\/(?:open|uc)\?[^#]*id=([\w-]+)/);return m?m[1]:""};
+const ytId=u=>{const m=u.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?(?:[^#]*&)?v=|shorts\/|embed\/))([\w-]{11})/);return m?m[1]:""};
+const thumb=u=>{const d=driveId(u);return d?`https://drive.google.com/thumbnail?id=${d}&sz=w1200`:u};
+function deckEmbed(u){
+  let m=u.match(/docs\.google\.com\/presentation\/d\/([\w-]+)/);if(m)return`https://docs.google.com/presentation/d/${m[1]}/embed`;
+  m=u.match(/docs\.google\.com\/document\/d\/([\w-]+)/);if(m)return`https://docs.google.com/document/d/${m[1]}/preview`;
+  const d=driveId(u);if(d)return`https://drive.google.com/file/d/${d}/preview`;
+  if(/\.pdf(\?|#|$)/i.test(u))return`https://docs.google.com/viewer?embedded=true&url=${encodeURIComponent(u)}`;
+  return"";
+}
+function media(i,can){
+  const ph=urls(i.photos),vd=urls(i.video)[0],pd=urls(i.pitch)[0],demo=urls(i.demo)[0];
+  if(!ph.length&&!vd&&!pd&&!demo)return"";
+  const bl=can?"":" blur",b=can?0:1;let h="";
+  if(!can)h+=`<div class="note">${ICON.shield}<span>Photos, video and pitch deck are blurred until the organizer confirms they contain no personal information.</span></div>`;
+  else if(!i.mediaOk)h+=`<div class="note">${ICON.shield}<span>Not verified yet: visitors see this blurred. Tick “Media verified” in Admin to show it to everyone.</span></div>`;
+  if(ph.length)h+=`<div class="photos n${Math.min(ph.length,4)}">${ph.slice(0,4).map(u=>`<img class="${bl.trim()}" loading="lazy" referrerpolicy="no-referrer" alt="Project photo" src="${esc(thumb(u))}" onerror="this.remove()">`).join("")}</div>`;
+  if(vd){
+    const y=ytId(vd),d=driveId(vd);
+    if(y)h+=`<button type="button" class="vid" data-embed="${esc("https://www.youtube-nocookie.com/embed/"+y+"?autoplay=1&rel=0")}" data-bl="${b}" aria-label="Play working video"><span class="thumb${bl}" style="background-image:url(https://i.ytimg.com/vi/${y}/hqdefault.jpg)"></span><span class="play">${ICON.play}</span></button>`;
+    else if(d)h+=`<button type="button" class="vid" data-embed="${esc("https://drive.google.com/file/d/"+d+"/preview")}" data-bl="${b}" aria-label="Play working video"><span class="play">${ICON.play}</span></button>`;
+    else if(/\.(mp4|webm|ogg)(\?|#|$)/i.test(vd))h+=`<video class="${bl.trim()}" controls preload="metadata" playsinline src="${esc(vd)}"></video>`;
+    else h+=`<div class="chips">${can?`<a class="chip" href="${esc(vd)}" target="_blank" rel="noopener">${ICON.play.replace("<svg","<svg width=16 height=16")} Watch working video</a>`:`<span class="chip dim">Video added · hidden until verified</span>`}</div>`;
+  }
+  if(pd){
+    const e=deckEmbed(pd);
+    if(e)h+=`<button type="button" class="deck" data-embed="${esc(e)}" data-bl="${b}">${ICON.doc}<span>View pitch deck</span></button>`;
+    else h+=`<div class="chips">${can?`<a class="chip" href="${esc(pd)}" target="_blank" rel="noopener">${ICON.doc} Open pitch deck</a>`:`<span class="chip dim">Pitch deck added · hidden until verified</span>`}</div>`;
+  }
+  if(can&&(demo||(pd&&deckEmbed(pd)))){h+=`<div class="chips">${demo?`<a class="chip" href="${esc(demo)}" target="_blank" rel="noopener">Live demo</a>`:""}${pd&&deckEmbed(pd)?`<a class="chip" href="${esc(pd)}" target="_blank" rel="noopener">Open pitch deck in new tab</a>`:""}</div>`}
+  return h;
+}
+
+/* ---------- idea card ---------- */
+const DET=[["problem","What problem does it solve?"],["solution","How does it work?"],["impact","Who benefits / how much improvement?"],["cost","Estimated cost (₹)"],["ai","AI used in the project (%)"],["aiw","Where AI is used"],["aif","Where AI will be used in future"]];
+function card(i,open){
+  const can=!!i.mediaOk||isAdmin();
+  const det=DET.filter(d=>String(i[d[0]]||"").trim()).map(d=>`<div class="q"><b>${d[1]}</b><span>${pii(i[d[0]])}</span></div>`).join("");
+  return`<article class="idea glass" id="i-${esc(i.id)}"><div class="tags"><span class="tag ${i.track==="web"?"web":"project"}">${i.track==="web"?"Web Development":"Project Development"}</span><span class="tag">${esc(i.level)}</span><span class="tag">${i.team>1?"Team of "+esc(i.team):"Solo"}</span></div><h3>${pii(i.title)}</h3><p class="sum">${pii(i.summary)}</p>${ratingBox(i)}${media(i,can)}<details${open?" open":""}><summary>Read the full idea</summary>${det||'<p class="m">No more details added.</p>'}</details>${open?"":`<p style="margin:10px 0 0"><a class="m" href="#/idea/${esc(i.id)}">Open this idea on its own page</a></p>`}</article>`;
+}
+
+/* ---------- gallery ---------- */
+const SK='<div class="sk"></div><div class="sk"></div>';
+const errCard=(m,retry)=>`<div class="note err">${ICON.info}<span>${m}${retry?` <button type="button" class="link" data-retry>Try again</button>`:""}</span></div>`;
+const INFO=()=>`<section id="how" style="margin-top:36px"><h2 style="font-size:26px">How it works</h2><div class="steps">${[["Register","Create an account and submit your idea, solo or in a team of up to 5."],["Get rated","The community and the organizer rate every idea."],["Build in 10 days","Top ideas build a working project."],["Win prizes","Projects are tested and winners are announced."]].map((s,k)=>`<div class="glass"><div class="n">${k+1}</div><b>${s[0]}</b><div class="m">${s[1]}</div></div>`).join("")}</div></section><section id="fees" class="glass" style="margin-top:16px"><h2 style="font-size:22px;margin-top:0">Registration fee</h2><div class="fees">${Object.keys(FEES).map(n=>`<span class="tag">${n} ${n==1?"person":"people"} · ₹${FEES[n]}</span>`).join("")}</div><p class="m">The prize pool depends on the number of verified registrations and is announced before registration closes.</p><a class="btn gold shine" href="#/register"><span>Register now</span></a></section>`;
+const MAST=()=>`<section class="masthead"><span class="pill"><i></i>Online competition</span><h1 class="mast"><span class="wordmark">RABHA</span><span class="fullname">Web &amp; Project Development Competition</span></h1><div class="rule"></div><p class="tag-line">Share your idea. Build it in 10 days. Win exciting prizes.</p><div class="jump"><a class="btn" href="#/" data-jump="ideas">Browse ideas</a><a class="btn" href="#/" data-jump="how">How it works</a><a class="btn" href="#/" data-jump="fees">Fees</a></div></section>`;
+function fill(){
+  const box=$("#g");if(!box)return;
+  if(dataState==="loading"){box.innerHTML=SK;return}
+  if(dataState==="error"){box.innerHTML=errCard("Ideas could not load. Check your internet connection, then try again."+(errs.length?` <span class="m">(${esc(errs.join(", "))})</span>`:""),true);return}
+  const q=V("s").toLowerCase(),tr=V("t"),lv=V("l"),so=V("o");
+  const list=ideas.filter(i=>(!tr||i.track===tr)&&(!lv||i.level===lv)&&[i.title,i.summary,i.problem,i.solution].join(" ").toLowerCase().includes(q));
+  list.sort((a,b)=>so==="new"?((b.created&&b.created.seconds)||0)-((a.created&&a.created.seconds)||0):(avg(b.id)-avg(a.id))||(cnt(b.id)-cnt(a.id)));
+  const c=$("#cnt");if(c)c.textContent=list.length+" idea"+(list.length==1?"":"s");
+  box.innerHTML=(errs.length?errCard("Some data could not load ("+esc(errs.join(", "))+"). Check the Firestore rules.",true):"")+(list.map(i=>card(i)).join("")||`<div class="glass empty"><h3>${ideas.length?"No ideas match your search":"No ideas yet"}</h3><p class="m">${ideas.length?"Try a different search or filter.":"Be the first to share an idea."}</p>${ideas.length?"":'<a class="btn gold shine" href="#/register"><span>Register now</span></a>'}</div>`);
+}
+function gallery(t){
+  if(!main(MAST()+`<section id="ideas" aria-labelledby="ih"><div class="feedhead"><h2 id="ih">Project ideas</h2><span class="m" id="cnt"></span></div><div class="filters"><input id="s" type="search" placeholder="Search ideas" aria-label="Search ideas"><select id="t" aria-label="Track"><option value="">All tracks<option value="web">Web Development<option value="project">Project Development</select><select id="l" aria-label="Level"><option value="">All levels<option>School<option>College<option>Diploma<option>Other</select><select id="o" aria-label="Sort"><option value="top">Top rated<option value="new">Newest</select></div><div id="g"></div></section>${INFO()}`,t))return;
+  ["s","t","l","o"].forEach(x=>{const el=$("#"+x);el.oninput=fill;el.onchange=fill});
+  fill();
+  if(dataState==="loading")dataPromise.then(()=>{if(t===tok)fill()});
+}
+async function ideaPage(id,t){
+  main(`<div style="padding-top:24px"><a href="#/">← All ideas</a></div><div class="sk" style="margin-top:14px"></div>`,t);
+  await dataPromise;if(t!==tok)return;
+  const i=ideas.find(x=>x.id===id);
+  if(!i)return void main(`<div style="padding-top:24px"><a href="#/">← All ideas</a></div><div class="glass empty" style="margin-top:14px"><h3>Idea not found</h3><p class="m">It may have been removed.</p></div>`,t);
+  main(`<div style="padding-top:24px"><a href="#/">← All ideas</a></div><div style="margin-top:14px">${card(i,true)}</div>`,t);
+  document.title=i.title+" · RABHA";
+}
+
+/* ---------- validation helpers ---------- */
+const URLRE=/^https?:\/\/[^\s/$.?#][^\s]*\.[^\s]{2,}$/i;
+function setErr(map){
+  $$(".fe").forEach(e=>e.textContent="");$$(".bad").forEach(x=>x.classList.remove("bad"));
+  let first=null;
+  Object.keys(map).forEach(k=>{const e=$(`.fe[data-f="${k}"]`);if(e){e.textContent=map[k];const w=e.closest(".f,.chk");if(w)w.classList.add("bad");if(!first)first=e}});
+  if(first)first.scrollIntoView({block:"center",behavior:"smooth"});
+  return!first;
+}
+function busy(b,on,txt){if(!b)return;b.disabled=on;b.classList.toggle("busy",on);if(txt!==undefined)b.querySelector("span").textContent=txt}
+function authMsg(e){
+  const c=e&&e.code||"";
+  return({"auth/email-already-in-use":"This email already has an account. Please log in instead.","auth/invalid-credential":"Wrong email or password.","auth/wrong-password":"Wrong email or password.","auth/user-not-found":"No account found for this email.","auth/invalid-email":"Enter a valid email address.","auth/weak-password":"Password must be at least 6 characters.","auth/too-many-requests":"Too many attempts. Wait a few minutes and try again.","auth/network-request-failed":"No internet connection. Check your network and try again.","auth/operation-not-allowed":"This sign-in method is not switched on in Firebase yet (Authentication → Sign-in method).","auth/unauthorized-domain":"This website address is not allowed in Firebase (Authentication → Settings → Authorized domains).","auth/popup-blocked":"Your browser blocked the sign-in window. Allow pop-ups and try again."})[c]||(e&&e.message)||"Something went wrong.";
+}
+const ready=()=>{if(!AU){setMsg("The server could not be reached. Open this page in Chrome or Safari with internet on.");return false}return true};
+function setMsg(m,ok){const e=$("#er");if(e){e.textContent=m;e.className="msg"+(ok?" ok":"")}}
+const inp=(id,label,type,icon,ph,ac,eye)=>`<label for="${id}">${label}</label><div class="inp">${ICON[icon]}<input id="${id}" type="${type}" placeholder="${ph}" autocomplete="${ac}"${type==="email"?' inputmode="email" autocapitalize="off" spellcheck="false"':""}>${eye?`<button type="button" class="eye" data-eye="${id}" aria-label="Show password">${ICON.eye}</button>`:""}</div><small class="fe" data-f="${id}"></small>`;
+
+/* ---------- login ---------- */
+function login(t){
+  if(me&&authReady)return void(location.hash=nextRoute||"#/");
+  if(!main(`<div class="authwrap"><form class="glass cut auth" id="af" novalidate><h1>Welcome <span class="gd">back</span></h1><p class="m" style="margin:0">Log in to rate ideas and manage your entry.</p>${inp("em","Email address","email","mail","name@domain.com","email")}${inp("pw","Password","password","lock","Your password","current-password",1)}<div class="r"><button type="button" class="link" id="rs">Forgot password?</button></div><button class="btn gold shine block" id="go" type="submit"><span>Log in</span></button><div class="or">or continue with</div><button type="button" class="btn block" id="gg">${ICON.google}<span>Google</span></button><p class="msg" id="er" role="alert"></p><p class="sw">New here? <a href="#/register">Create account</a></p></form></div>`,t))return;
+  $("#af").onsubmit=async e=>{e.preventDefault();
+    const m={};if(!/^\S+@\S+\.\S+$/.test(V("em")))m.em="Enter a valid email address.";if(!$("#pw").value)m.pw="Enter your password.";
+    if(!setErr(m))return;if(!ready())return;
+    const b=$("#go");busy(b,true,"Logging in…");setMsg("");
+    try{await AU.signInWithEmailAndPassword(auth,V("em"),$("#pw").value)}catch(x){setMsg(authMsg(x));busy(b,false,"Log in")}};
+  $("#rs").onclick=async()=>{if(!/^\S+@\S+\.\S+$/.test(V("em")))return setErr({em:"Enter your email first, then tap Forgot password."});setErr({});if(!ready())return;
+    try{await AU.sendPasswordResetEmail(auth,V("em"));setMsg("Reset email sent. Check your inbox and spam folder.",true)}catch(x){setMsg(authMsg(x))}};
+  $("#gg").onclick=()=>google();
+}
+async function google(){
+  if(!ready())return;setMsg("");
+  try{await AU.signInWithPopup(auth,new AU.GoogleAuthProvider())}catch(x){if(x&&x.code!=="auth/popup-closed-by-user"&&x.code!=="auth/cancelled-popup-request")setMsg(authMsg(x))}
+}
+/* ---------- register (create account) ---------- */
+function register(t){
+  if(me&&authReady)return void(location.hash="#/enter");
+  if(!main(`<div class="authwrap"><form class="glass cut auth" id="af" novalidate><h1>Create <span class="gd">account</span></h1><p class="m" style="margin:0">Step 1 of 2. Next you will fill in your idea and team details.</p>${inp("rn","Full name","text","user","Your full name","name")}${inp("em","Email address","email","mail","name@domain.com","email")}<div class="two"><div>${inp("pw","Password","password","lock","At least 6 characters","new-password",1)}</div><div>${inp("pw2","Confirm password","password","lock","Repeat password","new-password",1)}</div></div><div class="chk"><input type="checkbox" id="ag"><span>I agree to the <a href="#/terms" target="_blank">Terms &amp; Conditions</a> and <a href="#/privacy" target="_blank">Privacy Policy</a>.</span><small class="fe" data-f="ag"></small></div><button class="btn gold shine block" id="go" type="submit" style="margin-top:12px"><span>Create account</span></button><div class="or">or sign up with</div><button type="button" class="btn block" id="gg">${ICON.google}<span>Google</span></button><p class="msg" id="er" role="alert"></p><p class="sw">Already have an account? <a href="#/login">Log in</a></p></form></div>`,t))return;
+  $("#af").onsubmit=async e=>{e.preventDefault();const m={};
+    if(V("rn").length<2)m.rn="Enter your full name.";
+    if(!/^\S+@\S+\.\S+$/.test(V("em")))m.em="Enter a valid email address.";
+    if($("#pw").value.length<6)m.pw="Use at least 6 characters.";
+    if($("#pw2").value!==$("#pw").value)m.pw2="Passwords do not match.";
+    if(!$("#ag").checked)m.ag="Please accept the Terms and Privacy Policy.";
+    if(!setErr(m))return;if(!ready())return;
+    const b=$("#go");busy(b,true,"Creating account…");setMsg("");holdRedirect=true;
+    try{const c=await AU.createUserWithEmailAndPassword(auth,V("em"),$("#pw").value);try{await AU.updateProfile(c.user,{displayName:V("rn")})}catch(x){}
+      me=auth.currentUser;holdRedirect=false;nav();location.hash=nextRoute||"#/enter";nextRoute=null}
+    catch(x){holdRedirect=false;setMsg(authMsg(x));busy(b,false,"Create account")}};
+  $("#gg").onclick=()=>{nextRoute=nextRoute||"#/enter";google()};
+}
+function onAuth(){
+  const r=route()[0];
+  if(r==="login"||r==="register"){if(me&&!holdRedirect){location.hash=nextRoute||(r==="register"?"#/enter":"#/");nextRoute=null}return}
+  if(r==="terms"||r==="privacy")return;
+  render(false);
+}
+
+/* ---------- registration form (competition entry) ---------- */
+const F=(id,label,o)=>{o=o||{};const at=`id="${id}" name="${id}"${o.max?` maxlength="${o.max}"`:""}${o.ph?` placeholder="${esc(o.ph)}"`:""}${o.ac?` autocomplete="${o.ac}"`:' autocomplete="off"'}${o.im?` inputmode="${o.im}"`:""}`;
+  return`<div class="f" data-wrap="${id}"><label for="${id}">${label}${o.req?' <span class="rq" aria-hidden="true">*</span>':""}</label>${o.ta?`<textarea ${at} rows="${o.rows||3}"></textarea>`:`<input ${at} type="${o.type||"text"}">`}${o.hint?`<small class="hint">${o.hint}</small>`:""}<small class="fe" data-f="${id}"></small></div>`};
+const SEL=(id,label,opts)=>`<div class="f"><label for="${id}">${label}</label><select id="${id}">${opts}</select></div>`;
+let qrLib=null;
+const loadQR=()=>qrLib||(qrLib=new Promise((ok,no)=>{if(window.qrcode)return ok();const s=document.createElement("script");s.src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js";s.onload=ok;s.onerror=()=>{qrLib=null;no(new Error("qr"))};document.head.appendChild(s)}));
+function shrink(file){return new Promise((res,rej)=>{const u=URL.createObjectURL(file),im=new Image();im.onload=()=>{try{let w=im.naturalWidth,h=im.naturalHeight;const k=Math.min(1,1000/Math.max(w,h));w=Math.round(w*k);h=Math.round(h*k);const c=document.createElement("canvas");c.width=w;c.height=h;c.getContext("2d").drawImage(im,0,0,w,h);let q=.7,d=c.toDataURL("image/jpeg",q);while(d.length>380000&&q>.3){q-=.1;d=c.toDataURL("image/jpeg",q)}URL.revokeObjectURL(u);d.length>700000?rej(new Error("big")):res(d)}catch(e){rej(e)}};im.onerror=()=>rej(new Error("bad"));im.src=u})}
+async function enter(t){
+  if(!me){nextRoute="#/enter";return void(location.hash="#/register")}
+  main(`<div style="padding-top:30px"><div class="sk"></div></div>`,t);
+  await Promise.race([dataPromise,new Promise(r=>setTimeout(r,6000))]);if(t!==tok)return;
+  let mine=ideas.find(i=>i.uid===me.uid);
+  if(dataState==="error"){
+    try{const q=await withTO(FS.getDocs(FS.query(FS.collection(db,"ideas"),FS.where("uid","==",me.uid))),10000);const d=q.docs[0];if(d)mine=Object.assign({id:d.id},d.data())}
+    catch(e){return void main(`<div style="padding-top:30px">${errCard("Could not check your entry because the server did not respond."+(e&&(e.code||e.message)?` <span class="m">(${esc(e.code||e.message)})</span>`:""),true)}</div>`,t)}
+  }
+  if(mine)return void main(`<div class="authwrap"><div class="glass cut auth" style="width:min(560px,100%)"><h1>Your <span class="gd">entry</span></h1><p>You have already registered an idea. One person = one entry.</p><div class="note ${mine.paid?"ok":""}">${ICON.info}<span>${mine.paid?"Payment verified.":"Payment is waiting for verification by the organizer."} Status: <b>${esc(mine.status||"submitted")}</b></span></div>${card(mine,false).replace('class="idea glass"','class="idea"')}<a class="btn gold shine block" href="#/"><span>Back to ideas</span></a></div></div>`,t);
+  let shotData="";const t0=Date.now();
+  const fee=n=>FEES[n]||149;
+  const upi=cfg.pay&&cfg.pay.upi?esc(cfg.pay.upi):"";
+  if(!main(`<form id="ef" novalidate style="padding-top:26px;max-width:720px;margin:0 auto"><h1 style="font-size:clamp(28px,7vw,40px);margin:0 0 4px">Register your <span class="gd">idea</span></h1><p class="m" style="margin:0 0 18px">Step 2 of 2. Fields marked <span class="rq">*</span> are required.</p>
+<section class="glass cut sec"><h2><i>1</i>Entry type</h2><div class="three">${SEL("track","Track",'<option value="web">Web Development<option value="project">Project Development')}${SEL("level","Your level",'<option>School<option>College<option>Diploma<option>Other')}${SEL("team","Team size",[1,2,3,4,5].map(n=>`<option value="${n}">${n} ${n==1?"person":"people"} · ₹${fee(n)}`).join(""))}</div><div id="mem" hidden>${F("members","Other team members",{ta:1,rows:3,max:600,ph:"Name, mobile, email (one person per line)",hint:"Add every other member, one per line."})}</div></section>
+<section class="glass sec"><h2><i>2</i>About you</h2><p class="m" style="margin:0">Private: only the organizer can see this section.</p>${F("name","Full name",{req:1,max:80,ac:"name"})}${F("phone","WhatsApp mobile number",{req:1,max:16,ac:"tel",im:"tel",ph:"10-digit number"})}${F("city","City / location",{req:1,max:80,ac:"address-level2"})}${F("school","School name & class",{max:120})}${F("college","College, degree/diploma & year",{max:160})}${F("work","What do you do? Any side business?",{max:200})}${F("photo","Profile photo link (optional)",{max:300,type:"url",im:"url",hint:"Only the organizer sees this."})}</section>
+<section class="glass sec"><h2><i>3</i>Your idea</h2><p class="m" style="margin:0">This is public. Do not write names, phone numbers or emails here.</p>${F("title","Idea / project title",{req:1,max:100})}${F("summary","Short summary (shown in the gallery)",{req:1,ta:1,rows:3,max:300,hint:"At least 20 characters, up to 300."})}${F("problem","What problem does it solve?",{req:1,ta:1,max:1200})}${F("solution","How does your solution work?",{req:1,ta:1,max:1500,hint:"Explain how it works. Do not paste source code."})}${F("cost","Total estimated cost (₹)",{max:12,im:"numeric"})}${F("impact","How many people benefit / % improvement?",{max:200})}${F("ai","AI used in your project (%)",{max:5,im:"numeric",ph:"0 to 100"})}${F("aiw","Where did you use AI?",{ta:1,max:600})}${F("aif","Where will you use AI in future?",{ta:1,max:600})}</section>
+<section class="glass sec"><h2><i>4</i>Photos, video &amp; pitch deck</h2><div class="note">${ICON.shield}<span><b>Privacy:</b> Do not show your name, mobile number, email, face or social handles. Do not include project source code. Show only how your idea or project works, using a normal pitch deck or PDF. Everything here is shown blurred to the public until the organizer checks it.</span></div><p class="m" style="margin:0">Upload your file to Google Drive (set to “Anyone with the link can view”) or YouTube (Unlisted), then paste the link.</p>${F("pitch","Pitch deck / PDF link",{req:1,type:"url",im:"url",max:400,ph:"https://"})}${F("photos","Photo links (optional)",{ta:1,rows:2,max:900,ph:"One link per line"})}${F("video","Working video link (optional)",{type:"url",im:"url",max:400,ph:"https://"})}${F("demo","Live website / demo link (optional)",{type:"url",im:"url",max:400,ph:"https://"})}<div class="chk"><input type="checkbox" id="okm"><span>I confirm my photos, video and pitch deck contain no personal information and no source code.</span><small class="fe" data-f="okm"></small></div></section>
+<section class="glass sec"><h2><i>5</i>Payment &amp; submit</h2><div class="pay"><div><div class="m">Amount to pay</div><b id="amt">₹${fee(1)}</b></div><div style="text-align:right"><div class="m">UPI ID</div>${upi?`<code>${upi}</code> <button type="button" class="link" data-copy="${upi}">Copy</button>`:'<span class="m">Will be shown here soon. Ask on Instagram @rabha_automation.</span>'}</div></div><div class="qrbox" id="qrbox" ${upi?"":"hidden"}><div id="qr"><span class="m">Loading QR…</span></div><div><p class="m" style="margin:0 0 8px">Scan with any UPI app. The amount is filled in automatically for your team size. Pay the exact amount.</p><a id="upil" class="btn gold" href="#"><span>Pay in UPI app</span></a></div></div>
+${F("utr","Payment UTR / transaction number",{req:1,max:30,ph:"12-digit UTR",hint:"Find it in your UPI app under the payment details."})}
+<div class="f" data-wrap="shot"><label for="shot">Payment screenshot <span class="rq" aria-hidden="true">*</span></label><input type="file" id="shot" accept="image/*"><small class="hint">Screenshot of the successful payment showing amount, UTR and date. Only the organizer can see it.</small><img id="shotp" class="pv" alt="Screenshot preview" hidden><small class="fe" data-f="shot"></small></div>
+<div class="chk"><input type="checkbox" id="ok"><span>I have read and agree to the <a href="#/terms" target="_blank">Terms &amp; Conditions</a>.</span><small class="fe" data-f="ok"></small></div>
+<div class="chk"><input type="checkbox" id="ok2"><span>I have read and agree to the <a href="#/privacy" target="_blank">Privacy Policy</a>. If I am under 18, my parent/guardian agrees.</span><small class="fe" data-f="ok2"></small></div>
+<div class="hp" aria-hidden="true"><label for="hp">Leave this empty</label><input id="hp" name="fax_number" tabindex="-1" autocomplete="off"></div>
+<button class="btn gold shine block" id="sv" type="submit" style="margin-top:14px"><span>Submit my entry</span></button><p class="msg" id="er" role="alert"></p></section></form>`,t))return;
+  if(me.displayName)$("#name").value=me.displayName;
+  const upiRaw=(cfg.pay&&cfg.pay.upi)||"";
+  const upiUrl=n=>"upi://pay?pa="+encodeURIComponent(upiRaw)+"&pn=RABHA&am="+fee(n)+".00&cu=INR&tn="+encodeURIComponent("RABHA entry "+n+" person");
+  const qrUpdate=n=>{if(!upiRaw)return;const a=$("#upil");if(a){a.href=upiUrl(n);a.firstChild.textContent="Pay ₹"+fee(n)+" in UPI app"}
+    loadQR().then(()=>{const q=window.qrcode(0,"M");q.addData(upiUrl(n));q.make();const c=q.getModuleCount(),m=4;let p="";for(let r=0;r<c;r++)for(let k=0;k<c;k++)if(q.isDark(r,k))p+=`M${k+m} ${r+m}h1v1h-1z`;const b=$("#qr");if(b)b.innerHTML=`<svg viewBox="0 0 ${c+2*m} ${c+2*m}" shape-rendering="crispEdges" role="img" aria-label="UPI payment QR"><rect width="100%" height="100%" fill="#fff"/><path d="${p}" fill="#000"/></svg>`}).catch(()=>{const b=$("#qr");if(b)b.innerHTML='<span class="m">QR could not load. Use the button or copy the UPI ID.</span>'})};
+  const sync=()=>{const n=+V("team"),lv=V("level");qrUpdate(n);$("#amt").textContent="₹"+fee(n);$("#mem").hidden=n<2;$('[data-wrap="school"]').hidden=lv!=="School";$('[data-wrap="college"]').hidden=!(lv==="College"||lv==="Diploma")};
+  $("#team").onchange=sync;$("#level").onchange=sync;sync();
+  $("#shot").onchange=async e=>{const f=e.target.files&&e.target.files[0],p=$("#shotp"),fe=$('.fe[data-f="shot"]');shotData="";p.hidden=true;fe.textContent="";if(!f)return;
+    if(!/^image\//.test(f.type)){fe.textContent="Please choose an image file (JPG or PNG).";e.target.value="";return}
+    if(f.size>20*1024*1024){fe.textContent="Image is too large. Choose a smaller screenshot.";e.target.value="";return}
+    try{shotData=await shrink(f);p.src=shotData;p.hidden=false}catch(x){fe.textContent="Could not read this image. Try another screenshot.";e.target.value=""}};
+  $("#ef").onsubmit=async e=>{e.preventDefault();
+    const m={},team=+V("team");
+    if(V("name").length<2)m.name="Enter your full name.";
+    if(!/^(\+?91)?[6-9]\d{9}$/.test(V("phone").replace(/[\s-]/g,"")))m.phone="Enter a valid 10-digit Indian mobile number.";
+    if(V("city").length<2)m.city="Enter your city.";
+    if(team>1&&V("members").split(/\n/).filter(x=>x.trim().length>3).length<team-1)m.members=`Add details of the other ${team-1} member${team>2?"s":""}, one per line.`;
+    if(V("title").length<3)m.title="Enter a title (at least 3 characters).";
+    if(V("summary").length<20)m.summary="Write at least 20 characters so people understand your idea.";
+    if(V("problem").length<20)m.problem="Explain the problem in at least 20 characters.";
+    if(V("solution").length<20)m.solution="Explain your solution in at least 20 characters.";
+    if(V("cost")&&!/^\d+(\.\d+)?$/.test(V("cost").replace(/[,₹\s]/g,"")))m.cost="Enter numbers only.";
+    if(V("ai")&&!(/^\d+(\.\d+)?$/.test(V("ai").replace(/[%\s]/g,""))&&+V("ai").replace(/[%\s]/g,"")<=100))m.ai="Enter a number from 0 to 100.";
+    if(!V("pitch"))m.pitch="The pitch deck link is required.";else if(!URLRE.test(V("pitch")))m.pitch="Enter a full link that starts with https://";
+    if(V("demo")&&!URLRE.test(V("demo")))m.demo="Enter a full link that starts with https://";
+    if(V("video")&&!URLRE.test(V("video")))m.video="Enter a full link that starts with https://";
+    if(V("photos")&&!V("photos").split(/[\s,]+/).filter(Boolean).every(u=>URLRE.test(u)))m.photos="Each photo link must start with https://";
+    if(V("photo")&&!URLRE.test(V("photo")))m.photo="Enter a full link that starts with https://";
+    if(!/^[A-Za-z0-9]{12,22}$/.test(V("utr")))m.utr="Enter the 12-digit UTR (letters and numbers only, no spaces).";
+    if(!shotData)m.shot="Upload your payment screenshot.";
+    if(!$("#okm").checked)m.okm="Please confirm your media has no personal information or source code.";
+    if(!$("#ok").checked)m.ok="Please accept the Terms & Conditions.";
+    if(!$("#ok2").checked)m.ok2="Please accept the Privacy Policy.";
+    if(!setErr(m)){setMsg("Please fix the highlighted fields.");return}
+    if(V("hp")){setMsg("Could not submit this form. Refresh the page and try again.");return}
+    if(Date.now()-t0<15000){setMsg("Please check your answers once, then tap Submit again.");return}
+    if(!ready())return;
+    const b=$("#sv");busy(b,true,"Submitting…");setMsg("");
+    const g=k=>V(k),prof={};
+    ["name","phone","photo","city","school","college","work","utr","members"].forEach(k=>prof[k]=g(k));prof.shot=shotData;prof.amount=fee(team);
+    try{
+      const ex=await withTO(FS.getDocs(FS.query(FS.collection(db,"ideas"),FS.where("uid","==",me.uid))),15000);
+      if(!ex.empty){setMsg("You have already registered an idea. One person = one entry.");busy(b,false,"Submit my entry");return}
+      await FS.setDoc(FS.doc(db,"users",me.uid),Object.assign({},prof,{email:me.email,level:g("level"),accepted:Date.now(),policy:"v1"}));
+      const d={uid:me.uid,track:g("track"),level:g("level"),team:+g("team"),paid:false,status:"submitted",ref:ls.get("ref")||"",created:FS.serverTimestamp()};
+      ["title","summary","problem","solution","cost","impact","ai","aiw","aif","pitch","demo","photos","video"].forEach(k=>d[k]=g(k));
+      await FS.addDoc(FS.collection(db,"ideas"),d);
+      await loadData();nav();
+      main(`<div class="authwrap"><div class="glass cut done auth"><svg class="ck" viewBox="0 0 84 84" aria-hidden="true"><circle cx="42" cy="42" r="38"/><path d="M26 43l11 11 21-23"/></svg><h1>Entry <span class="gd">received</span></h1><p class="m">The organizer will verify your payment. Your idea now appears in the gallery, where people can read and rate it.</p><a class="btn gold shine block" href="#/"><span>See all ideas</span></a></div></div>`,t);window.scrollTo(0,0);
+    }catch(x){setMsg((x.code==="permission-denied"?"The server rejected this entry (permission denied). Check the Firestore rules. ":"")+(x.message||""));busy(b,false,"Submit my entry")}
+  };
+}
+
+/* ---------- creator + admin ---------- */
+const stats=c=>{const a=ideas.filter(i=>i.ref==c),l=a.filter(i=>i.paid),n=l.length,rev=l.reduce((s,i)=>s+(FEES[i.team]||149),0),r=n<10?0:n<=100?.08:.1;return{all:a.length,n,web:l.filter(i=>i.track=="web").length,pr:l.filter(i=>i.track=="project").length,com:Math.round(rev*r),r,a}};
+async function creator(t){
+  if(!me){nextRoute="#/creator";return void(location.hash="#/login")}
+  main(`<div style="padding-top:30px"><div class="sk"></div></div>`,t);await dataPromise;if(t!==tok)return;
+  if(!FS)return void main(`<div style="padding-top:30px">${errCard("The server could not be reached.",true)}</div>`,t);
+  let c;try{c=(await FS.getDocs(FS.query(FS.collection(db,"creators"),FS.where("email","==",me.email)))).docs[0]}catch(e){return void main(`<div style="padding-top:30px">${errCard("Could not load creator data: "+esc(e.code||e.message))}</div>`,t)}
+  if(t!==tok)return;
+  if(!c)return void main(`<div style="padding-top:30px"><div class="glass"><h2>Creator dashboard</h2><p>No creator account for this email.</p></div></div>`,t);
+  const id=c.id,s=stats(id),link=location.origin+location.pathname.replace(/index\.html$/,"")+"?ref="+encodeURIComponent(id);
+  main(`<div style="padding-top:26px"><div class="glass cut sec"><h2>Hello ${esc(c.data().name)}</h2><p>Your link: <b style="overflow-wrap:anywhere">${esc(link)}</b> <button type="button" class="link" data-copy="${esc(link)}">Copy</button></p><p>Registrations: ${s.all} · Verified paid: ${s.n} (Web ${s.web}, Project ${s.pr})<br>Commission rate: ${(s.r*100).toFixed(0)}% · <b>Commission: ₹${s.com}</b></p><p class="m">Commission is paid on verified payments after registration closes.</p></div><div class="glass tscroll"><table><tr><th>#<th>Track<th>Idea<th>Status</tr>${s.a.map((i,k)=>`<tr><td>${k+1}<td>${esc(i.track)}<td>${esc(i.title)}<td>${RESULTS_OUT?esc(i.status):"-"}</tr>`).join("")}</table></div></div>`,t);
+}
+async function admin(t){
+  if(!me){nextRoute="#/admin";return void(location.hash="#/login")}
+  if(!isAdmin())return void main(`<div style="padding-top:30px"><div class="glass">Admin only.</div></div>`,t);
+  main(`<div style="padding-top:30px"><div class="sk"></div></div>`,t);await dataPromise;if(t!==tok)return;
+  if(!FS)return void main(`<div style="padding-top:30px">${errCard("The server could not be reached.",true)}</div>`,t);
+  const us={};let cr=[],er="";
+  try{(await FS.getDocs(FS.collection(db,"users"))).forEach(d=>us[d.id]=d.data());cr=(await FS.getDocs(FS.collection(db,"creators"))).docs.map(d=>Object.assign({id:d.id},d.data()))}catch(e){er=e.code||e.message}
+  let rf=[];try{rf=(await FS.getDocs(FS.collection(db,"refunds"))).docs.map(d=>Object.assign({id:d.id},d.data())).sort((a,b)=>(b.created||0)-(a.created||0))}catch(e){}
+  if(t!==tok)return;
+  if(!main(`<div style="padding-top:26px">${er?errCard("Some admin data could not load: "+esc(er)):""}<div class="glass sec"><h2>All ideas</h2><div class="filters" style="grid-template-columns:1fr 1fr 1fr"><select id="t"><option value="">All tracks<option value="web">Web<option value="project">Project</select><select id="l"><option value="">All levels<option>School<option>College<option>Diploma<option>Other</select><select id="st"><option value="">All status<option>submitted<option>shortlisted<option>selected<option>winner</select></div><div class="tscroll"><table id="tb"></table></div><p class="m">“Media verified” removes the blur from photos, video and pitch deck for the public. Tick it only after you have checked there is no personal information or source code.</p></div>
+<div class="glass sec"><h2>UPI ID for payments</h2><p class="m" style="margin:0">Change anytime.</p><div class="row"><input id="upi" value="${esc(cfg.pay&&cfg.pay.upi)}"><button class="btn gold" id="us" type="button">Save</button></div></div>
+<div class="glass sec"><h2>Refunds to send (${rf.filter(r=>!r.done).length} pending)</h2><p class="m" style="margin:0">Send the money back to the payer's UPI app (see UTR), then tick “Refunded”.</p><div class="tscroll"><table id="rft"><tr><th>Person<th>UTR<th>Amount<th>Idea<th>Reason<th>Refunded</tr>${rf.map(r=>`<tr><td>${esc(r.name)}<br>${esc(r.phone)}<br>${esc(r.email)}<td>${esc(r.utr)}<td>₹${esc(r.amount)}<td>${esc(r.title)}<td>${esc(r.reason)}<td><input type="checkbox" aria-label="Refunded" data-rf="${esc(r.id)}" ${r.done?"checked":""}></tr>`).join("")}</table></div></div>
+<div class="glass sec"><h2>Creators</h2><div class="row"><input id="cn" placeholder="Name"><input id="ce" placeholder="Email"><input id="cc" placeholder="Code (e.g. riya)"><button class="btn gold" id="ca" type="button">Add</button></div><div class="tscroll"><table>${cr.map(c=>{const s=stats(c.id);return`<tr><td>${esc(c.name)}<td>${esc(c.email)}<td>${s.all} reg · ${s.n} paid · ₹${s.com}<td>?ref=${esc(c.id)}</tr>`}).join("")}</table></div><p class="m">Tell the creator to open Login → Create account with this same email (or Forgot password) to see their dashboard.</p></div></div>`,t))return;
+  const f=()=>{$("#tb").innerHTML="<tr><th>Idea<th>Track<th>Level<th>Rating<th>Person<th>UTR / Amount<th>Proof<th>Paid<th>Media verified<th>Status<th>Remove</tr>"+ideas.filter(i=>(!V("t")||i.track==V("t"))&&(!V("l")||i.level==V("l"))&&(!V("st")||i.status==V("st"))).sort((a,b)=>avg(b.id)-avg(a.id)).map(i=>{const u=us[i.uid]||{};return`<tr><td><a href="#/idea/${esc(i.id)}">${esc(i.title)}</a><td>${esc(i.track)}<td>${esc(i.level)}<td>${avg(i.id).toFixed(1)} (${cnt(i.id)})<td>${esc(u.name)}<br>${esc(u.phone)}<td>${esc(u.utr)}<br>₹${FEES[i.team]||149}<td>${u.shot?`<img class="shot" alt="Payment screenshot" data-shot="${esc(i.uid)}" src="${u.shot}">`:"–"}<td><input type="checkbox" aria-label="Paid" data-i="${esc(i.id)}" data-k="paid" ${i.paid?"checked":""}><td><input type="checkbox" aria-label="Media verified" data-i="${esc(i.id)}" data-k="mediaOk" ${i.mediaOk?"checked":""}><td><select data-i="${esc(i.id)}" data-k="status">${["submitted","shortlisted","selected","winner"].map(s=>`<option ${i.status==s?"selected":""}>${s}`).join("")}</select><td><button type="button" class="link" data-del="${esc(i.id)}">Refund &amp; delete</button></tr>`}).join("")};
+  ["t","l","st"].forEach(x=>$("#"+x).onchange=f);f();
+  $("#tb").onchange=async e=>{const el=e.target,id=el.dataset.i,k=el.dataset.k;if(!id)return;const v=el.type=="checkbox"?el.checked:el.value,it=ideas.find(x=>x.id===id),old=it[k];
+    try{await FS.updateDoc(FS.doc(db,"ideas",id),{[k]:v});it[k]=v;toast("Saved")}catch(x){if(el.type=="checkbox")el.checked=!!old;else el.value=old;toast("Could not save: "+(x.code||x.message))}};
+  $("#tb").onclick=async e=>{const T=e.target;
+    const sh=T.closest&&T.closest("[data-shot]");if(sh){const o=document.createElement("div");o.style.cssText="position:fixed;inset:0;z-index:99;background:rgba(0,0,0,.9);display:grid;place-items:center;padding:16px;cursor:zoom-out";const im=document.createElement("img");im.alt="Payment screenshot";im.style.cssText="max-width:100%;max-height:100%;border-radius:12px";im.src=(us[sh.dataset.shot]||{}).shot||"";o.appendChild(im);o.onclick=()=>o.remove();document.body.appendChild(o);return}
+    const dl=T.closest&&T.closest("[data-del]");if(!dl)return;
+    const id=dl.dataset.del,it=ideas.find(x=>x.id===id);if(!it)return;const u=us[it.uid]||{},amt=FEES[it.team]||149;
+    const why=prompt("Why is this idea being removed? (illegal, copied, not suitable...)");if(why===null)return;if(why.trim().length<3)return toast("Please write a reason.");
+    if(!confirm("Delete \""+it.title+"\" and refund ₹"+amt+" to "+(u.name||"the participant")+"?\nThe idea and its ratings will be deleted. You must send the refund yourself; it will be listed under Refunds."))return;
+    try{
+      await FS.setDoc(FS.doc(db,"refunds",id),{uid:it.uid,name:u.name||"",phone:u.phone||"",email:u.email||"",utr:u.utr||"",amount:amt,reason:why.trim(),title:it.title||"",created:Date.now(),done:false});
+      await FS.deleteDoc(FS.doc(db,"ideas",id));
+      try{const rs=await FS.getDocs(FS.query(FS.collection(db,"ratings"),FS.where("idea","==",id)));await Promise.all(rs.docs.map(d=>FS.deleteDoc(d.ref)))}catch(x){}
+      ideas=ideas.filter(x=>x.id!==id);delete byIdea[id];toast("Deleted. Refund listed.");admin(tok)}
+    catch(x){toast("Could not delete: "+(x.code||x.message))}};
+  $("#rft").onchange=async e=>{const el=e.target,id=el.dataset.rf;if(!id)return;try{await FS.updateDoc(FS.doc(db,"refunds",id),{done:el.checked});toast("Saved")}catch(x){el.checked=!el.checked;toast("Could not save: "+(x.code||x.message))}};
+  $("#us").onclick=async()=>{try{await FS.setDoc(FS.doc(db,"settings","pay"),{upi:V("upi")});cfg.pay={upi:V("upi")};toast("Saved")}catch(x){toast("Could not save: "+(x.code||x.message))}};
+  $("#ca").onclick=async()=>{if(!V("cc")||!V("ce"))return toast("Enter name, email and code.");try{await FS.setDoc(FS.doc(db,"creators",V("cc")),{name:V("cn"),email:V("ce")});admin(tok)}catch(x){toast("Could not add: "+(x.code||x.message))}};
+}
+
+/* ---------- router ---------- */
+const route=()=>{const h=location.hash.replace(/^#\/?/,"");const p=h.split("/");return[p[0]||"",p[1]||""]};
+async function render(toTop){
+  const t=++tok,r=route(),a=r[0],arg=r[1];
+  nav();
+  if(a==="terms"||a==="privacy"){document.title=(a==="terms"?"Terms & Conditions":"Privacy Policy")+" · RABHA";return}
+  document.title=TITLE;
+  const pages={"":gallery,idea:()=>ideaPage(arg,t),login,register,enter,submit:enter,admin,creator};
+  try{await(pages[a]||gallery)(t)}catch(e){reportError(e);main(`<div style="padding-top:30px">${errCard("This page could not load. Refresh and try again.")}</div>`,t)}
+  if(toTop!==false)window.scrollTo(0,0);
+}
+
+/* ---------- global events ---------- */
+document.addEventListener("click",async e=>{
+  const T=e.target;if(!T.closest)return;
+  if(!T.closest(".menu")||T.closest(".pop a"))$$(".menu[open]").forEach(d=>d.open=false);
+  const lo=T.closest("#lo");if(lo){e.preventDefault();try{await AU.signOut(auth)}catch(x){}toast("Logged out");location.hash="#/";return}
+  const j=T.closest("[data-jump]");if(j){e.preventDefault();const el=document.getElementById(j.dataset.jump);if(el)el.scrollIntoView({behavior:"smooth",block:"start"});return}
+  const ey=T.closest("[data-eye]");if(ey){const i=document.getElementById(ey.dataset.eye);const show=i.type==="password";i.type=show?"text":"password";ey.innerHTML=show?ICON.eyeoff:ICON.eye;ey.setAttribute("aria-label",show?"Hide password":"Show password");return}
+  const em=T.closest("[data-embed]");if(em){const f=document.createElement("div");f.className="frame"+(em.classList.contains("deck")?" tall":"");f.innerHTML=`<iframe class="${em.dataset.bl==="1"?"blur":""}" src="${esc(em.dataset.embed)}" allow="autoplay; fullscreen" allowfullscreen loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin allow-presentation allow-popups" title="Media preview"></iframe>`;em.replaceWith(f);return}
+  const cp=T.closest("[data-copy]");if(cp){const v=cp.dataset.copy;try{await navigator.clipboard.writeText(v);toast("Copied")}catch(x){toast(v)}return}
+  const rt=T.closest("[data-retry]");if(rt){dataState="loading";boot();render(false);return}
+  const rb=T.closest("[data-rate]");if(rb){
+    const id=rb.dataset.idea,v=+rb.dataset.rate;
+    if(!me){nextRoute=location.hash||"#/";toast("Log in to rate this idea");location.hash="#/login";return}
+    const it=ideas.find(x=>x.id===id);if(!it||it.uid===me.uid)return;
+    try{await FS.setDoc(FS.doc(db,"ratings",id+"_"+me.uid),{idea:id,uid:me.uid,v});if(!byIdea[id])byIdea[id]={};byIdea[id][me.uid]=v;refreshRate(id);toast("Thanks! You rated "+v+" star"+(v>1?"s":""))}
+    catch(x){toast("Could not save your rating: "+(x.code||x.message))}
+  }
+});
+window.addEventListener("hashchange",()=>render(true));
+
+/* ---------- cookie banner + analytics ---------- */
+function loadGA(){if(!GA_ID||document.getElementById("ga"))return;const s=document.createElement("script");s.id="ga";s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id="+encodeURIComponent(GA_ID);document.head.appendChild(s);window.dataLayer=window.dataLayer||[];window.gtag=function(){window.dataLayer.push(arguments)};window.gtag("js",new Date());window.gtag("config",GA_ID,{anonymize_ip:true})}
+function cookie(){
+  if(ls.get("rb_c"))return;
+  const d=document.createElement("div");d.className="cookie";d.setAttribute("role","dialog");d.setAttribute("aria-label","Cookie choices");
+  d.innerHTML=`<p>We keep you logged in and remember your referral link. With your OK we also count visits to improve the site. <a href="#/privacy">Privacy Policy</a></p><button class="btn gold" type="button" data-c="all">Accept all</button><button class="btn" type="button" data-c="min">Essential only</button>`;
+  d.onclick=e=>{const b=e.target.closest("[data-c]");if(!b)return;ls.set("rb_c",b.dataset.c);if(b.dataset.c==="all")loadGA();d.remove()};
+  document.body.appendChild(d);
+}
+
+/* ---------- start ---------- */
+window.__ready=1;
+if(ls.get("rb_c")==="all")loadGA();
+boot();
+cookie();
+render(false);
+})();
+</script></body></html>
